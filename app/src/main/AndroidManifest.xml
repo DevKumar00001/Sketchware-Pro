@@ -321,6 +321,16 @@
         <meta-data
             android:name="firebase_crashlytics_collection_enabled"
             android:value="true" />
+        <activity
+
+            android:name="mod.tsd.activities.DocumentationActivity"
+
+            android:configChanges="orientation|screenSize"
+
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.Translucent"
+
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
 
     </application>
 </manifest>
