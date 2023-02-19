@@ -39,7 +39,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.*;
 import org.json.*;
-import mod.tsd.activities.R;
 
 
 public class DocumentationActivity extends AppCompatActivity {
