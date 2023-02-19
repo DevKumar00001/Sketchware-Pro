@@ -1,6 +1,7 @@
 package mod.tsd.activities;
 
 
+import mod.tsd.activities.R;
 
 import android.animation.*;
 
