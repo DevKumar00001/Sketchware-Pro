@@ -130,7 +130,7 @@ public class MainDrawer extends LinearLayout implements View.OnClickListener {
         menuChangelog.icon = R.drawable.icon_file_white_96;
         menuChangelog.title = "Changelog";
         
-        DrawerItem menuChangelog = DrawerItem.EXTERNAL_LINKS;
+        DrawerItem menuChangelog = DrawerItem.MENU_EXTERNAL_LINKS;
         menuChangelog.icon = R.drawable.side_menu_info_icon_over_white;
         menuChangelog.title = "External links";
 
@@ -186,7 +186,7 @@ public class MainDrawer extends LinearLayout implements View.OnClickListener {
     private enum DrawerItem {
         MENU_ABOUT_MODDERS,
         MENU_CHANGELOG,
-        EXTERNAL_LINKS,
+        MENU_EXTERNAL_LINKS,
         MENU_SYSTEM_SETTINGS,
         MENU_PROGRAM_INFO,
         MENU_DEVELOPER_TOOLS,
@@ -282,8 +282,8 @@ public class MainDrawer extends LinearLayout implements View.OnClickListener {
                         activity.startActivity(intent);
                     } else if (id == DrawerItem.MENU_CHANGELOG.ordinal()) {
                         changeLogDialog(context);
-                    } else if(id == DrawerItem.EXTERNAL_LINKS.ordinal()){
-                    	Intent intent = new Intent(activity,DocumentationActivity.class);
+                    } else if(id == DrawerItem.MENU_EXTERNAL_LINKS.ordinal()){
+                       Intent intent = new Intent(activity,DocumentationActivity.class);
                        intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                        activity.startActivity(intent);
                     } else if (id == DrawerItem.MENU_SYSTEM_SETTINGS.ordinal()) {
