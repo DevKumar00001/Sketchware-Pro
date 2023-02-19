@@ -130,7 +130,7 @@ public class MainDrawer extends LinearLayout implements View.OnClickListener {
         menuChangelog.icon = R.drawable.icon_file_white_96;
         menuChangelog.title = "Changelog";
         
-        DrawerItem menuChangelog = DrawerItem.MENU_EXTERNAL_LINKS;
+        DrawerItem externalLinks = DrawerItem.MENU_EXTERNAL_LINKS;
         menuChangelog.icon = R.drawable.side_menu_info_icon_over_white;
         menuChangelog.title = "External links";
 
