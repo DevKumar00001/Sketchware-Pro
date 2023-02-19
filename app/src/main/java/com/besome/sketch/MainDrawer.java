@@ -31,6 +31,7 @@ import a.a.a.wB;
 import mod.hey.studios.util.Helper;
 import mod.hilal.saif.activities.tools.Tools;
 import mod.ilyasse.activities.about.AboutModActivity;
+import mod.tsd.activities.DocumentationActivity;
 
 public class MainDrawer extends LinearLayout implements View.OnClickListener {
 
@@ -283,7 +284,7 @@ public class MainDrawer extends LinearLayout implements View.OnClickListener {
                     } else if (id == DrawerItem.MENU_CHANGELOG.ordinal()) {
                         changeLogDialog(context);
                     } else if(id == DrawerItem.MENU_EXTERNAL_LINKS.ordinal()){
-                       Intent intent = new Intent(activity,DocumentationActivity.class);
+                       Intent intent = new Intent(activity, DocumentationActivity.class);
                        intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                        activity.startActivity(intent);
                     } else if (id == DrawerItem.MENU_SYSTEM_SETTINGS.ordinal()) {
