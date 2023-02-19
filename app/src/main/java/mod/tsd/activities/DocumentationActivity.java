@@ -3,10 +3,6 @@ package mod.tsd.activities;
 import com.sketchware.remod.R;
 import android.animation.*;
 import android.app.*;
-import android.app.Activity;
-import android.app.DialogFragment;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.*;
 import android.content.Intent;
 import android.content.res.*;
@@ -20,6 +16,7 @@ import android.text.*;
 import android.text.style.*;
 import android.util.*;
 import android.view.*;
+import android.view.View;
 import android.view.View.*;
 import android.view.animation.*;
 import android.webkit.*;
@@ -29,6 +26,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import androidx.annotation.*;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import com.bumptech.glide.Glide;
 import java.io.*;
 import java.text.*;
 import java.util.*;
@@ -36,14 +39,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.*;
 import org.json.*;
+import mod.tsd.activities.R;
 
-public class DocumentationActivity extends Activity {
+
+public class DocumentationActivity extends AppCompatActivity {
 	
 	private HashMap<String, Object> MM = new HashMap<>();
 	
 	private ArrayList<HashMap<String, Object>> Data = new ArrayList<>();
 	private ArrayList<HashMap<String, Object>> Data2 = new ArrayList<>();
 	
+	private LinearLayout linear3;
 	private ScrollView Main;
 	private LinearLayout Log;
 	private HorizontalScrollView hscroll1;
@@ -51,6 +57,8 @@ public class DocumentationActivity extends Activity {
 	private ImageView imageview1;
 	private TextView textview1;
 	private TextView textview2;
+	private LinearLayout linear4;
+	private ImageView imageview2;
 	
 	private View LI;
 	private Intent Link = new Intent();
@@ -66,6 +74,7 @@ public class DocumentationActivity extends Activity {
 	}
 	
 	private void initialize(Bundle _savedInstanceState) {
+		linear3 = findViewById(R.id.linear3);
 		Main = findViewById(R.id.Main);
 		Log = findViewById(R.id.Log);
 		hscroll1 = findViewById(R.id.hscroll1);
@@ -73,7 +82,16 @@ public class DocumentationActivity extends Activity {
 		imageview1 = findViewById(R.id.imageview1);
 		textview1 = findViewById(R.id.textview1);
 		textview2 = findViewById(R.id.textview2);
+		linear4 = findViewById(R.id.linear4);
+		imageview2 = findViewById(R.id.imageview2);
 		FetchFile = new RequestNetwork(this);
+		
+		imageview2.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				onBackPressed();
+			}
+		});
 		
 		_FetchFile_request_listener = new RequestNetwork.RequestListener() {
 			@Override
@@ -90,22 +108,29 @@ public class DocumentationActivity extends Activity {
 			public void onErrorResponse(String _param1, String _param2) {
 				final String _tag = _param1;
 				final String _message = _param2;
-				
+				textview1.setText("Failed to fetch data.");
+				textview2.setText("Click here to go back.");
+				textview2.setOnClickListener(new View.OnClickListener() {
+						@Override
+						public void onClick(View _view) {
+						onBackPressed();
+						}
+				});
 			}
 		};
 	}
 	
 	private void initializeLogic() {
-		Log.setVisibility(View.VISIBLE);
 		Main.setVisibility(View.GONE);
+		Log.setVisibility(View.VISIBLE);
 		FetchFile.startRequestNetwork(RequestNetworkController.GET, "https://technicalstudiodeveloper.github.io/Sketchware-pro-data.github.io/main.json", "A", _FetchFile_request_listener);
 	}
 	
 	public void _listAllDataFromJSON(final String _json, final View _view) {
 		try{
 			final JSONArray MyLoadedData = new JSONArray(_json);
-			for(int _repeat13 = 0; _repeat13 < (int)(MyLoadedData.length()); _repeat13++) {
-				JSONObject JSONObj = MyLoadedData.getJSONObject(_repeat13);
+			for(int _repeat95 = 0; _repeat95 < (int)(MyLoadedData.length()); _repeat95++) {
+				JSONObject JSONObj = MyLoadedData.getJSONObject(_repeat95);
 
 				if (JSONObj.has("title")) {
 					LI = getLayoutInflater().inflate(R.layout.documentation_adapter, null);
@@ -114,9 +139,12 @@ public class DocumentationActivity extends Activity {
 					final LinearLayout myl2 = ((LinearLayout)LI.findViewById(R.id.linear2));
 					final LinearLayout myl3 = ((LinearLayout)LI.findViewById(R.id.linear3));
 					final ImageView img1 =((ImageView)LI.findViewById(R.id.imageview1));
+					final ImageView img2 =((ImageView)LI.findViewById(R.id.imageview2));
+					
 					title.setText(JSONObj.getString("title"));
 					myl3.setVisibility(View.GONE);
-					final int _r = _repeat13;
+					img2.setVisibility(View.GONE);
+					final int _r = _repeat95;
 					
 					if (JSONObj.has("clickable")) {
 						if (JSONObj.getString("clickable").equals("true")) {
@@ -164,8 +192,23 @@ public class DocumentationActivity extends Activity {
 						img1.setVisibility(View.INVISIBLE);
 						img1.setEnabled(false);
 					}
+					if (JSONObj.has("ShouldShowFavicon")) {
+						if (JSONObj.getBoolean("ShouldShowFavicon")) {
+							if (JSONObj.has("url")) {
+								img2.setVisibility(View.VISIBLE);
+								Glide.with(getApplicationContext()).load(Uri.parse("https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=".concat(JSONObj.getString("url")).concat("&size=128"))).into(img2);
+							}
+						}
+					}
 					if (JSONObj.has("TextviewSize")) {
 						title.setTextSize((int)JSONObj.getInt("TextviewSize"));
+					}
+					if (JSONObj.has("titleColor")) {
+						try{
+							_setTextColor(title, JSONObj.getString("titleColor"));
+						}catch(Exception e){
+							title.setText(title.getText().toString().concat(" ".concat("(Error : Invalid Color)")));
+						}
 					}
 					if (myl1 != null) {
 						((LinearLayout)myl1.getParent()).removeView(myl1);
@@ -177,6 +220,11 @@ public class DocumentationActivity extends Activity {
 		catch(JSONException e){
 			 
 		}
+	}
+	
+	
+	public void _setTextColor(final TextView _view, final String _color) {
+		_view.setTextColor(Color.parseColor(_color));
 	}
 	
 }
