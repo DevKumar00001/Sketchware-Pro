@@ -409,6 +409,10 @@ public class Gx {
                 classInfos = "Component.MediaController";
                 break;
 
+            case "CustomizableView":
+                classInfos = "View.Clickable.CustomizableView";
+                break;
+
             default:
                 classInfos = ComponentsHandler.c(a);
         }

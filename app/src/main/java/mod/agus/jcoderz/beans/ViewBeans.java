@@ -36,7 +36,7 @@ public class ViewBeans {
     public static final int VIEW_TYPE_WIDGET_OTPVIEW = 46;
     public static final int VIEW_TYPE_WIDGET_CODEVIEW = 47;
     public static final int VIEW_TYPE_WIDGET_RECYCLERVIEW = 48;
-
+    public static final int VIEW_TYPE_WIDGET_CUSTOMIZED_1 = 49;
     /**
      * Map that stores both a view's type and type name.
      */
@@ -71,6 +71,7 @@ public class ViewBeans {
             .put(VIEW_TYPE_WIDGET_OTPVIEW, "OTPView")
             .put(VIEW_TYPE_WIDGET_CODEVIEW, "CodeView")
             .put(VIEW_TYPE_WIDGET_RECYCLERVIEW, "RecyclerView")
+            .put(VIEW_TYPE_WIDGET_CUSTOMIZED_1, "CustomizableView")
             .build();
 
     public static String buildClassInfo(int id) {
@@ -167,6 +168,8 @@ public class ViewBeans {
             case VIEW_TYPE_WIDGET_CODEVIEW:
                 return R.drawable.widget_code_view;
 
+						case  VIEW_TYPE_WIDGET_CUSTOMIZED_1:
+								return R.drawable.widget_linear_horizontal;
             default:
                 return id;
         }

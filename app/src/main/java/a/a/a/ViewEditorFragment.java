@@ -309,6 +309,8 @@ public class ViewEditorFragment extends qA {
                 viewEditor.extraWidget("", "TimePicker", "TimePicker");
                 viewEditor.extraWidget("", "DatePicker", "DatePicker");
                 viewEditor.a(PaletteWidget.b.k, "", "CalendarView", "CalendarView");
+                viewEditor.i.extraTitle("CustomizableView", 1);
+                viewEditor.extraWidget("", "CustomizableView"," CustomizableView");
             }
         }
     }

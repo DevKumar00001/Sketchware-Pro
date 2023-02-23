@@ -91,6 +91,7 @@ public class ViewPanes {
             case ViewBeans.VIEW_TYPE_LAYOUT_TEXTINPUTLAYOUT:
             case ViewBeans.VIEW_TYPE_LAYOUT_SWIPEREFRESHLAYOUT:
             case ViewBeans.VIEW_TYPE_LAYOUT_RADIOGROUP:
+            case ViewBeans.VIEW_TYPE_WIDGET_CUSTOMIZED_1:
                 return new ItemLinearLayout(context);
 
             case ViewBeans.VIEW_TYPE_WIDGET_MATERIALBUTTON:
