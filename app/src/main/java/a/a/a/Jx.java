@@ -241,7 +241,7 @@ public class Jx {
             } else {
                 sb.append("Activity");
             }
-        }
+        } 
         sb.append(" {").append(EOL);
 
         boolean activityHasFields = false;
