@@ -30,6 +30,8 @@ import io.github.rosemoe.sora.widget.schemes.EditorColorScheme;
 import mod.hey.studios.util.Helper;
 import mod.jbk.code.CodeEditorColorSchemes;
 import mod.jbk.code.CodeEditorLanguages;
+import mod.tsd.utils.SketchwareNotification;
+import mod.hilal.saif.activities.tools.ConfigActivity;
 
 public class SrcViewerActivity extends AppCompatActivity {
 
@@ -44,13 +46,19 @@ public class SrcViewerActivity extends AppCompatActivity {
     private String currentPageFileName;
     private int sourceCodeFontSize = 12;
     private CodeEditor codeViewer;
-
+    private boolean isActivityVisible = true;
+    private int NotificationState = 0;
+    private int NotificationID = 1;
+    private SketchwareNotification sourceCodeNotification = new SketchwareNotification(this,"Show Source Code", "Receive Notifications when show source code is clicked and you switch to another app.");
+        ;
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.src_viewer);
-
-        currentPageFileName = getIntent().hasExtra("current") ? getIntent().getStringExtra("current") : "";
+        
+		sourceCodeNotification.initNotificationManager();
+		currentPageFileName = getIntent().hasExtra("current") ? getIntent().getStringExtra("current") : "";
 
         codeViewer = new CodeEditor(this);
         codeViewer.setTypefaceText(Typeface.MONOSPACE);
@@ -94,6 +102,9 @@ public class SrcViewerActivity extends AppCompatActivity {
                 filesListSpinner.setVisibility(View.GONE);
                 changeFontSize.setVisibility(View.GONE);
                 progressContainer.setVisibility(View.VISIBLE);
+                // Notification State
+                NotificationState = 0;
+                showNotification(NotificationState);
             }
         }
 
@@ -117,6 +128,9 @@ public class SrcViewerActivity extends AppCompatActivity {
                         progressContainer.setVisibility(View.GONE);
                         filesListSpinner.setVisibility(View.VISIBLE);
                         changeFontSize.setVisibility(View.VISIBLE);
+                        // Notification State
+                        NotificationState = 1;
+                        showNotification(NotificationState);
                     }
                 });
             } catch (Exception ignored) {
@@ -200,5 +214,53 @@ public class SrcViewerActivity extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             return getCustomSpinnerView(position, convertView, false);
         }
+    }
+    
+    public void showNotification(int stage) {
+    	if (isActivityVisible) {
+    		
+    	} else {
+    		if (ConfigActivity.isSettingEnabled(ConfigActivity.SETTING_PROJECT_SOURCE_CODE_LOADING_NOTIFICATION)) {
+    			if (stage == 0) {
+    				sourceCodeNotification.setIcon(R.drawable.sketch_app_icon);
+    				sourceCodeNotification.setTitle("Source Code");
+    				sourceCodeNotification.setDescription("Source code is loading be patient");
+    				sourceCodeNotification.setCancelable(false);
+    				sourceCodeNotification.setProgress(0,100,true);
+    				sourceCodeNotification.setSilent(true);
+    				sourceCodeNotification.showNotification(NotificationID);
+    			} else {
+    				sourceCodeNotification.setIcon(R.drawable.sketch_app_icon);
+    				sourceCodeNotification.setTitle("Source Code");
+    				sourceCodeNotification.setDescription("Source code is ready to view now.Go to Sketchware to view it.");
+    				sourceCodeNotification.setCancelable(true);
+    				sourceCodeNotification.setProgressDisabled();
+    				sourceCodeNotification.setSilent(false);
+    				sourceCodeNotification.showNotification(NotificationID);
+    			}
+    		}
+    	}
+    }
+    
+    @Override
+    public void onPause(){
+    	super.onPause();
+    	isActivityVisible = false;
+    	if (NotificationState == 0) {
+    		showNotification(NotificationState);
+    	}
+    }
+    
+    @Override
+    public void onDestroy(){
+    	super.onDestroy();
+    	sourceCodeNotification.dismissNotification(NotificationID);
+    }
+    
+    @Override
+    public void onResume(){
+    	super.onResume();
+    	isActivityVisible = true;
+    	sourceCodeNotification.dismissNotification(NotificationID);
     }
 }

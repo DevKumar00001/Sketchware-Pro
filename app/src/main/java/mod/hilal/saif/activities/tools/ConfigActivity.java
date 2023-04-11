@@ -54,6 +54,7 @@ public class ConfigActivity extends Activity {
     public static final String SETTING_BLOCKMANAGER_DIRECTORY_PALETTE_FILE_PATH = "palletteDir";
     public static final String SETTING_BLOCKMANAGER_DIRECTORY_BLOCK_FILE_PATH = "blockDir";
     public static final String SETTING_PROJECT_COMPILING_NOTIFICATION = "project-compiling-notification";
+    public static final String SETTING_PROJECT_SOURCE_CODE_LOADING_NOTIFICATION = "project-source-code-loading-notification";
     
     private static final int DEFAULT_BACKGROUND_COLOR = Color.parseColor("#fafafa");
     private LinearLayout root;
@@ -204,7 +205,8 @@ public class ConfigActivity extends Activity {
                 SETTING_USE_ASD_HIGHLIGHTER,
                 SETTING_BLOCKMANAGER_DIRECTORY_PALETTE_FILE_PATH,
                 SETTING_BLOCKMANAGER_DIRECTORY_BLOCK_FILE_PATH),
-                SETTING_PROJECT_COMPILING_NOTIFICATION;
+                SETTING_PROJECT_COMPILING_NOTIFICATION,
+                SETTING_PROJECT_SOURCE_CODE_LOADING_NOTIFICATION;
 
         for (String key : keys) {
             settings.put(key, getDefaultValue(key));
@@ -222,6 +224,7 @@ public class ConfigActivity extends Activity {
             case SETTING_USE_NEW_VERSION_CONTROL:
             case SETTING_USE_ASD_HIGHLIGHTER:
             case SETTING_PROJECT_COMPILING_NOTIFICATION:
+            case SETTING_PROJECT_SOURCE_CODE_LOADING_NOTIFICATION:
                 return false;
 
             case SETTING_BACKUP_DIRECTORY:
@@ -289,10 +292,14 @@ public class ConfigActivity extends Activity {
                 "May slow down loading blocks in Logic Editor.",
                 SETTING_SHOW_BUILT_IN_BLOCKS,
                 false);
-       addSwitchPreference("Project Compiling Notification",
+        addSwitchPreference("Project Compiling Notification",
 		"Show Project compiling notification.",
 		SETTING_PROJECT_COMPILING_NOTIFICATION,
 		false);
+	    addSwitchPreference("Project Source Code Loading NNotification",
+	    "Shows the project source code loading notification when you switch to another app after clicking show source code",
+	    SETTING_PROJECT_SOURCE_CODE_LOADING_NOTIFICATION,
+	    false);
         addSwitchPreference("Show all variable blocks",
                 "All variable blocks will be visible, even if you don't have variables for them.",
                 SETTING_ALWAYS_SHOW_BLOCKS,
