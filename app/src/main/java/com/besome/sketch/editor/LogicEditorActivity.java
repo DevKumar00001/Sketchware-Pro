@@ -6,8 +6,10 @@ import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -179,7 +181,16 @@ public class LogicEditorActivity extends BaseAppCompatActivity implements View.O
     public boolean ha = false;
     public boolean ia = false;
     public Runnable aa = this::r;
-
+    public final String randomLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+    public String recentUniqueKey;
+    
+    public void generateUniqueKey() {
+    	recentUniqueKey = "";
+		for (int i = 0; i < 20; i++) {
+			recentUniqueKey = recentUniqueKey + randomLetters.charAt(new java.util.Random().nextInt(randomLetters.length()));
+		}
+    }
+    
     private void loadEventBlocks() {
         ArrayList<BlockBean> eventBlocks = jC.a(B).a(M.getJavaName(), C + "_" + D);
         if (eventBlocks != null) {
@@ -2235,6 +2246,7 @@ public class LogicEditorActivity extends BaseAppCompatActivity implements View.O
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.logic_editor);
+        generateUniqueKey();
         if (!super.j()) {
             finish();
         }
@@ -2251,6 +2263,84 @@ public class LogicEditorActivity extends BaseAppCompatActivity implements View.O
             parcelable = savedInstanceState.getParcelable("project_file");
         }
         M = (ProjectFileBean) parcelable;
+        sync2();
+        
+       	SyncLogicEditor syncLogicEditorReceiver = new SyncLogicEditor();
+
+		IntentFilter intentFilter = new IntentFilter();
+		intentFilter.addAction("com.sketchware.remod.event.multitask.".concat(B.concat(".".concat(C.concat(".".concat(D))))));
+
+		registerReceiver(syncLogicEditorReceiver, intentFilter);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.logic_menu, menu);
+        menu.findItem(R.id.menu_logic_redo).setEnabled(false);
+        menu.findItem(R.id.menu_logic_undo).setEnabled(false);
+        if (M == null) {
+            return true;
+        }
+        if (bC.d(B).g(s())) {
+            menu.findItem(R.id.menu_logic_redo).setIcon(R.drawable.ic_redo_white_48dp);
+            menu.findItem(R.id.menu_logic_redo).setEnabled(true);
+        } else {
+            menu.findItem(R.id.menu_logic_redo).setIcon(R.drawable.ic_redo_grey_48dp);
+            menu.findItem(R.id.menu_logic_redo).setEnabled(false);
+        }
+        if (bC.d(B).h(s())) {
+            menu.findItem(R.id.menu_logic_undo).setIcon(R.drawable.ic_undo_white_48dp);
+            menu.findItem(R.id.menu_logic_undo).setEnabled(true);
+        } else {
+            menu.findItem(R.id.menu_logic_undo).setIcon(R.drawable.ic_undo_grey_48dp);
+            menu.findItem(R.id.menu_logic_undo).setEnabled(false);
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        int itemId = menuItem.getItemId();
+
+        if (itemId == R.id.menu_block_helper) {
+            e(false);
+            g(!ia);
+        } else if (itemId == R.id.menu_logic_redo) {
+            redo();
+        } else if (itemId == R.id.menu_logic_undo) {
+            undo();
+        } else if (itemId == R.id.menu_logic_showsource) {
+            showSourceCode();
+        } else if (itemId == R.id.syncIcon) {
+        	syncAnotherClone();
+        }
+
+        return super.onOptionsItemSelected(menuItem);
+    }
+    
+    public void syncAnotherClone() {
+    	Intent sync = new Intent();
+    	sync.setAction("com.sketchware.remod.event.multitask.".concat(B.concat(".".concat(C.concat(".".concat(D))))));
+    	sync.putExtra("tag","Sync");
+    	sync.putExtra("key",recentUniqueKey);
+    	LogicEditorActivity.this.sendBroadcast(sync);
+    }
+    
+    public class SyncLogicEditor extends BroadcastReceiver {
+    	@Override
+    	public void onReceive(Context c,Intent i) {
+    		if (recentUniqueKey != i.getStringExtra("key")) {
+    			if ("Sync" == i.getStringExtra("tag")) {
+    				sync2();
+    				sync();
+    				bB.a(getContext(), xB.b().a(getContext(), "Received broadcast from ".concat(i.getStringExtra("key").toString())), bB.TOAST_NORMAL).show();
+    			}
+    		}
+    	}
+    }
+    
+    public void sync2() {
         H = new DB(this, "P1");
         T = (int) wB.a(getBaseContext(), (float) T);
         k = findViewById(R.id.toolbar);
@@ -2293,56 +2383,12 @@ public class LogicEditorActivity extends BaseAppCompatActivity implements View.O
         O = findViewById(R.id.right_drawer);
         j.h();
         extraPaletteBlock = new ExtraPaletteBlock(this);
+
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.logic_menu, menu);
-        menu.findItem(R.id.menu_logic_redo).setEnabled(false);
-        menu.findItem(R.id.menu_logic_undo).setEnabled(false);
-        if (M == null) {
-            return true;
-        }
-        if (bC.d(B).g(s())) {
-            menu.findItem(R.id.menu_logic_redo).setIcon(R.drawable.ic_redo_white_48dp);
-            menu.findItem(R.id.menu_logic_redo).setEnabled(true);
-        } else {
-            menu.findItem(R.id.menu_logic_redo).setIcon(R.drawable.ic_redo_grey_48dp);
-            menu.findItem(R.id.menu_logic_redo).setEnabled(false);
-        }
-        if (bC.d(B).h(s())) {
-            menu.findItem(R.id.menu_logic_undo).setIcon(R.drawable.ic_undo_white_48dp);
-            menu.findItem(R.id.menu_logic_undo).setEnabled(true);
-        } else {
-            menu.findItem(R.id.menu_logic_undo).setIcon(R.drawable.ic_undo_grey_48dp);
-            menu.findItem(R.id.menu_logic_undo).setEnabled(false);
-        }
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem) {
-        int itemId = menuItem.getItemId();
-
-        if (itemId == R.id.menu_block_helper) {
-            e(false);
-            g(!ia);
-        } else if (itemId == R.id.menu_logic_redo) {
-            redo();
-        } else if (itemId == R.id.menu_logic_undo) {
-            undo();
-        } else if (itemId == R.id.menu_logic_showsource) {
-            showSourceCode();
-        }
-
-        return super.onOptionsItemSelected(menuItem);
-    }
-
-    @Override
-    public void onPostCreate(Bundle bundle) {
-        super.onPostCreate(bundle);
-
-        String title;
+    
+    public void sync() {
+    	bB.a(getContext(), xB.b().a(getContext(), recentUniqueKey), bB.TOAST_NORMAL).show();
+       	String title;
         if (D.equals("moreBlock")) {
             title = xB.b().a(getContext(), R.string.root_spec_common_define) + " " + ReturnMoreblockManager.getLogicEditorTitle(jC.a(B).b(M.getJavaName(), C));
         } else if (C.equals("_fab")) {
@@ -2392,6 +2438,12 @@ public class LogicEditorActivity extends BaseAppCompatActivity implements View.O
         a(0, 0xffee7d16);
         loadEventBlocks();
         z();
+    }
+
+    @Override
+    public void onPostCreate(Bundle bundle) {
+        super.onPostCreate(bundle);
+        sync();
     }
 
     @Override
