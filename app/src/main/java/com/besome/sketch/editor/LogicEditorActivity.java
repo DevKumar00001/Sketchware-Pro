@@ -2330,13 +2330,10 @@ public class LogicEditorActivity extends BaseAppCompatActivity implements View.O
     public class SyncLogicEditor extends BroadcastReceiver {
     	@Override
     	public void onReceive(Context c,Intent i) {
-    		if (recentUniqueKey != i.getStringExtra("key")) {
-    			if ("Sync" == i.getStringExtra("tag")) {
-    				sync2();
-    				sync();
-    				bB.a(getContext(), xB.b().a(getContext(), "Received broadcast from ".concat(i.getStringExtra("key").toString())), bB.TOAST_NORMAL).show();
-    			}
-    		}
+    		Toast.makeText(LogicEditorActivity.this,"Receive",Toast.LENGTH_SHORT);
+    		sync2();
+    		sync();
+    		bB.a(getContext(), xB.b().a(getContext(), "Received broadcast from ".concat(i.getStringExtra("key").toString())), bB.TOAST_NORMAL).show();
     	}
     }
     
