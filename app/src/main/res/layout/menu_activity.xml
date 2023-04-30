@@ -130,7 +130,7 @@
                             android:gravity="center|left"
                             android:hint="Name"
                             android:padding="8dp"
-                            android:textColor="?attr/colorOnSurface"
+                            android:textColor="?attr/colorOnSurfaceVariant"
                             android:textColorHint="?attr/colorOnSurfaceVariant"
                             android:textSize="14sp" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -150,7 +150,7 @@
                             android:hint="Title"
                             android:padding="8dp"
                             android:textColor="?attr/colorOnSurfaceVariant"
-                            android:textColorHint="?attr/colorOnSurface"
+                            android:textColorHint="?attr/colorOnSurfaceVariant"
                             android:textSize="14sp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -163,25 +163,21 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/canc"
-                            style="@style/Widget.MaterialComponents.Button"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="cancel"
-                            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                            android:text="CANCEL"
                             android:textSize="11sp" />
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/save"
-                            style="@style/Widget.MaterialComponents.Button"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="save"
-                            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                            android:text="SAVE"
                             android:textSize="11sp" />
                     </LinearLayout>
                 </LinearLayout>
