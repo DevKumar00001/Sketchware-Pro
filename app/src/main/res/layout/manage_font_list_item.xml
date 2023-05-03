@@ -13,7 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?selectableItemBackground"
+        android:background="?attr/colorSurfaceVariant"
         android:gravity="center|left"
         android:minHeight="64dp"
         android:orientation="horizontal">
@@ -66,7 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
-                android:textColor="#ff404040"
+                android:textColor="?attr/colorOnSurfaceVariant"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -74,7 +74,7 @@
                 android:id="@+id/tv_font_preview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#ff7d7d7d"
+                android:textColor="?attr/colorOnSurfaceVariant"
                 android:textSize="13sp" />
         </LinearLayout>
     </LinearLayout>

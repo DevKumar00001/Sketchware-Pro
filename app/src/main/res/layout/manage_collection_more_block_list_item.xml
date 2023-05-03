@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
-        android:background="?selectableItemBackground"
+        android:background="?attr/colorSurface"
         android:gravity="center|left"
         android:orientation="horizontal">
 
@@ -55,7 +55,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginRight="16dp"
-                android:textColor="#ff404040"
+                android:textColor="?attr/colorOnSurface"
                 android:textSize="16sp" />
 
             <HorizontalScrollView

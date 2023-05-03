@@ -38,7 +38,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:alpha="0.8"
-        android:background="#ff424242"
+        android:background="?attr/colorSurfaceInverse"
         android:orientation="horizontal">
 
         <CheckBox
@@ -59,7 +59,7 @@
             android:layout_marginRight="8dp"
             android:layout_weight="1"
             android:gravity="center|left"
-            android:textColor="#fff5f5f5"
+            android:textColor="?attr/colorOnSurfaceInverse"
             android:textSize="14sp" />
     </LinearLayout>
 

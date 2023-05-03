@@ -45,8 +45,7 @@
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
                     android:textColor="?attr/colorOnSurface"
-                    android:textSize="14sp"
-                    android:theme="@style/AppTheme.Button.WhiteBlue" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <TextView

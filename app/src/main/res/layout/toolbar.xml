@@ -9,7 +9,7 @@
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
     app:titleTextAppearance="@style/ToolbarTextAppearance"
     android:textColorSecondary="?attr/colorOnPrimary"
-    android:subtitleTextStyle="@style/ToolbarTextAppearance">
+    app:subtitleTextStyle="@style/ToolbarTextAppearance">
 
     <RelativeLayout
         android:id="@+id/layout_main_logo"

@@ -77,6 +77,7 @@ import a.a.a.wq;
 import mod.SketchwareUtil;
 import mod.hey.studios.util.Helper;
 import mod.jbk.util.LogUtil;
+import mod.tsd.ui.MaterialColorsHelper;
 
 public class ManageCollectionActivity extends BaseAppCompatActivity implements View.OnClickListener {
 
@@ -448,6 +449,7 @@ public class ManageCollectionActivity extends BaseAppCompatActivity implements V
         getSupportActionBar().setTitle(Helper.getResString(R.string.design_actionbar_title_manager_collection));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
+        MaterialColorsHelper.setUpToolbarNavigationIconColor(this,toolbar.getNavigationIcon());
         toolbar.setNavigationOnClickListener(v -> {
             if (!mB.a()) {
                 onBackPressed();

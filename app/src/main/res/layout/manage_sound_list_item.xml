@@ -13,7 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="?selectableItemBackground"
+        android:background="?attr/colorSurfaceVariant"
         android:gravity="center|left"
         android:orientation="horizontal">
 
@@ -74,7 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
-                    android:textColor="#ff404040"
+                    android:textColor="?attr/colorSurfaceInverse"
                     android:textSize="16sp" />
 
                 <LinearLayout
@@ -89,7 +89,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="5dp"
                         android:paddingRight="5dp"
-                        android:textColor="#ff9a9a9a"
+                        android:textColor="?attr/colorOnSurfaceInverse"
                         android:textSize="12sp" />
 
                     <ProgressBar
@@ -105,7 +105,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:paddingLeft="5dp"
-                        android:textColor="#ff9a9a9a"
+                        android:textColor="?attr/colorOnSurfaceInverse"
                         android:textSize="12sp" />
                 </LinearLayout>
             </LinearLayout>
