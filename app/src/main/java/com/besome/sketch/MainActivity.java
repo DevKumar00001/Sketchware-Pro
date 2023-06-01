@@ -174,13 +174,7 @@ public class MainActivity extends BasePermissionAppCompatActivity implements Vie
         if (System.currentTimeMillis() - u1I1 > /* (a day) */ 1000 * 60 * 60 * 24) {
             u.a("U1I0", Integer.valueOf(u1I0 + 1));
         }
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        // Set Navigation Icon tint
-        MaterialColorsHelper.setUpToolbarNavigationIconColor(this,toolbar.getNavigationIcon());
-        ImageView logo = findViewById(R.id.img_title_logo);
-        logo.setOnClickListener(v -> invalidateOptionsMenu());
-
+        
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(null);
 
