@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
 
 import com.besome.sketch.editor.property.PropertySwitchItem;
 import com.besome.sketch.lib.base.BaseAppCompatActivity;
@@ -49,7 +48,7 @@ public class SystemSettingActivity extends BaseAppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-    	mod.tsd.ui.AppThemeApply.setUpTheme(this);
+        mod.tsd.ui.AppThemeApply.setUpTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.system_settings);
 
@@ -82,23 +81,61 @@ public class SystemSettingActivity extends BaseAppCompatActivity {
         MaterialTheme = getSharedPreferences("MaterialTheme", Context.MODE_PRIVATE);
         MaterialThemeEnable = getSharedPreferences("MaterialThemeEnable",Context.MODE_PRIVATE);
         
-        ((CardView)MaterialThemeInflator.findViewById(R.id.theme1)).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View _view) {
-				MaterialTheme.edit().putString("MaterialTheme","Red").commit();
-				MaterialThemeEnable.edit().putBoolean("MaterialThemeEnable",false).commit();
-				SketchwareUtil.showMessage(SystemSettingActivity.this,"App theme will be applied after a restart : ".concat(MaterialTheme.getString("MaterialTheme","Test")));
-			}
-		});
-        ((CardView)MaterialThemeInflator.findViewById(R.id.theme2)).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View _view) {
-				MaterialTheme.edit().putString("MaterialTheme","Red Dark").commit();
-				MaterialThemeEnable.edit().putBoolean("MaterialThemeEnable",false).commit();
-				SketchwareUtil.showMessage(SystemSettingActivity.this,"App theme will be applied after a restart : ".concat(MaterialTheme.getString("MaterialTheme","Test")));
-			}
-		});
-		contentLayout.addView(MaterialThemeInflator);
+        ((LinearLayout)MaterialThemeInflator.findViewById(R.id.theme1)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View _view) {
+                MaterialTheme.edit().putString("MaterialTheme","BrownishLight").commit();
+                MaterialThemeEnable.edit().putBoolean("MaterialThemeEnable",false).commit();
+                // SketchwareUtil.showMessage(SystemSettingActivity.this,"App theme will be applied after a restart : ".concat(MaterialTheme.getString("MaterialTheme","Test")));
+                recreate();
+            }
+        });
+        ((LinearLayout)MaterialThemeInflator.findViewById(R.id.theme2)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View _view) {
+                MaterialTheme.edit().putString("MaterialTheme","BrownishDark").commit();
+                MaterialThemeEnable.edit().putBoolean("MaterialThemeEnable",false).commit();
+                // SketchwareUtil.showMessage(SystemSettingActivity.this,"App theme will be applied after a restart : ".concat(MaterialTheme.getString("MaterialTheme","Test")));
+                recreate();
+            }
+        });
+        ((LinearLayout)MaterialThemeInflator.findViewById(R.id.theme3)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View _view) {
+                MaterialTheme.edit().putString("MaterialTheme","GreenLight").commit();
+                MaterialThemeEnable.edit().putBoolean("MaterialThemeEnable",false).commit();
+                // SketchwareUtil.showMessage(SystemSettingActivity.this,"App theme will be applied after a restart : ".concat(MaterialTheme.getString("MaterialTheme","Test")));
+                recreate();
+            }
+        });
+        ((LinearLayout)MaterialThemeInflator.findViewById(R.id.theme4)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View _view) {
+                MaterialTheme.edit().putString("MaterialTheme","GreenDark").commit();
+                MaterialThemeEnable.edit().putBoolean("MaterialThemeEnable",false).commit();
+                // SketchwareUtil.showMessage(SystemSettingActivity.this,"App theme will be applied after a restart : ".concat(MaterialTheme.getString("MaterialTheme","Test")));
+                recreate();
+            }
+        });
+        ((LinearLayout)MaterialThemeInflator.findViewById(R.id.theme5)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View _view) {
+                MaterialTheme.edit().putString("MaterialTheme","LightBlueLight").commit();
+                MaterialThemeEnable.edit().putBoolean("MaterialThemeEnable",false).commit();
+                // SketchwareUtil.showMessage(SystemSettingActivity.this,"App theme will be applied after a restart : ".concat(MaterialTheme.getString("MaterialTheme","Test")));
+                recreate();
+            }
+        });
+        ((LinearLayout)MaterialThemeInflator.findViewById(R.id.theme6)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View _view) {
+                MaterialTheme.edit().putString("MaterialTheme","LightBlueDark").commit();
+                MaterialThemeEnable.edit().putBoolean("MaterialThemeEnable",false).commit();
+                // SketchwareUtil.showMessage(SystemSettingActivity.this,"App theme will be applied after a restart : ".concat(MaterialTheme.getString("MaterialTheme","Test")));
+                recreate();
+            }
+        });
+        contentLayout.addView(MaterialThemeInflator);
     }
 
     private boolean saveSettings() {
