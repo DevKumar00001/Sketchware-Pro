@@ -17,6 +17,7 @@ import com.sketchware.remod.R;
 
 import a.a.a.aB;
 import mod.hey.studios.util.Helper;
+import mod.tsd.ui.MaterialColorsHelper;
 
 public class ProjectSettingsDialog {
 
@@ -120,7 +121,7 @@ public class ProjectSettingsDialog {
 
         i.setText(hint);
         i.setChecked(v.equals("true"));
-        i.setTextColor(Color.BLACK);
+        i.setTextColor(Color.parseColor(MaterialColorsHelper.getMaterialColor(activity,R.attr.colorOnSurface)));
         i.setPadding(
                 (int) getDip(4),
                 (int) getDip(8),
@@ -158,7 +159,7 @@ public class ProjectSettingsDialog {
                 (int) getDip(8)
         );
         e.setTextSize(16);
-        e.setTextColor(Color.BLACK);
+        e.setTextColor(Color.parseColor(MaterialColorsHelper.getMaterialColor(activity,R.attr.colorOnSurface)));
         e.setHint(hint);
         e.setHintTextColor(0xff607d8b);
         e.setText(settings.getValue(key, defaultValue));
