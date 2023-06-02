@@ -133,6 +133,7 @@ public class ShowBlockCollectionActivity extends BaseAppCompatActivity implement
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        mod.tsd.ui.AppThemeApply.setUpTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manage_collection_show_block);
 
