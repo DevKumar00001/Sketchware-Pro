@@ -579,6 +579,7 @@ public class MyProjectSettingActivity extends BaseDialogActivity implements View
         }
 
         private void initialize(Context context, int tag) {
+            mod.tsd.ui.AppThemeApply.setUpTheme(context);
             setTag(tag);
             wB.a(context, this, R.layout.myproject_color);
             color = findViewById(R.id.color);
