@@ -150,7 +150,7 @@ public class MyProjectSettingActivity extends BaseDialogActivity implements View
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-    	// mod.tsd.ui.AppThemeApply.setUpTheme(this);
+    	mod.tsd.ui.AppThemeApply.setUpTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.myproject_setting);
         if (!j()) {
@@ -580,7 +580,6 @@ public class MyProjectSettingActivity extends BaseDialogActivity implements View
 
         private void initialize(Context context, int tag) {
             setTag(tag);
-            mod.tsd.ui.AppThemeApply.setUpTheme(context);
             wB.a(context, this, R.layout.myproject_color);
             color = findViewById(R.id.color);
             name = findViewById(R.id.name);
