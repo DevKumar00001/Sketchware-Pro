@@ -28,7 +28,7 @@
                 android:id="@+id/common_dialog_title_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?attr/colorPrimaryContainer"
+                android:background="?attr/colorSurface"
                 android:gravity="center|left"
                 android:orientation="horizontal"
                 android:padding="16dp">
@@ -43,7 +43,7 @@
                     android:id="@+id/common_dialog_tv_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="?attr/colorPrimary"
+                    android:textColor="?attr/colorOnSurface"
                     android:textStyle="bold" />
             </LinearLayout>
 
