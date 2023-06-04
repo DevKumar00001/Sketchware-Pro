@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/colorPrimaryContainer"
+    android:background="?attr/colorSurface"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -13,7 +13,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
-        android:textColor="?attr/colorOnPrimaryContainer"
+        android:textColor="?attr/colorOnSurface"
         android:textSize="12sp"
         android:visibility="gone" />
 
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="4dp"
             android:textSize="12sp"
-            android:textColor="?attr/colorPrimaryContainer" />
+            android:textColor="?attr/colorOnSurface" />
 
         <CheckBox
             android:id="@+id/chk_collection"
