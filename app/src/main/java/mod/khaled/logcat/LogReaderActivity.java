@@ -95,6 +95,7 @@ public class LogReaderActivity extends AppCompatActivity {
         filterEdittext.setHint("Search log");
         filterEdittext.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(MaterialColorsHelper.getMaterialColor(LogReaderActivity.this,R.attr.colorOnPrimary))));
         filterEdittext.setTextColor(Color.parseColor(MaterialColorsHelper.getMaterialColor(LogReaderActivity.this,R.attr.colorOnPrimary)));
+        filterEdittext.setHintTextColor(Color.parseColor(MaterialColorsHelper.getMaterialColor(LogReaderActivity.this,R.attr.colorOnPrimary)));
         filterEdittext.setSingleLine(true);
         toolbar.addView(filterEdittext, toolbar.indexOfChild(optionsMenu));
 
