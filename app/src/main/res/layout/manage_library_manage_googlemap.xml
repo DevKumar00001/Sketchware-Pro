@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffffff"
+    android:background="?attr/colorSurface"
     android:orientation="vertical">
 
     <include layout="@layout/toolbar" />
@@ -30,7 +30,7 @@
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:textColor="@color/scolor_red_02"
+                android:textColor="?attr/colorError"
                 android:textSize="14sp" />
 
             <Switch
@@ -71,7 +71,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="left"
-                        android:textColor="#ff757575"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -94,7 +94,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:textColor="#ff4d4d4d"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="14sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -110,13 +110,14 @@
                         android:id="@+id/ed_api_key"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/bg_round_light_grey"
+                        android:background="?attr/colorSurfaceVariant"
                         android:gravity="center_vertical"
                         android:imeOptions="actionDone"
                         android:inputType="text"
                         android:lines="1"
                         android:padding="8dp"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="?attr/colorOnSurfaceVariant"/>
                 </androidx.core.widget.NestedScrollView>
             </LinearLayout>
         </ScrollView>
@@ -126,7 +127,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:textColor="#ffffffff"
             android:textSize="@dimen/text_size_button_material"
             android:theme="@style/AppTheme.Button.LightPink" />
 
@@ -134,7 +134,6 @@
             android:id="@+id/btn_open_doc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#ffffffff"
             android:textSize="@dimen/text_size_button_material"
             android:theme="@style/AppTheme.Button.LightBlue" />
     </LinearLayout>

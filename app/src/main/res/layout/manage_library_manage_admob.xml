@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="?attr/colorSurface">
 
     <include layout="@layout/toolbar" />
 
@@ -31,7 +32,7 @@
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:textColor="@color/scolor_red_02"
+                android:textColor="?attr/colorError"
                 android:textSize="14sp" />
 
             <Switch
@@ -78,7 +79,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:textColor="#ff4d4d4d"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="14sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -92,7 +93,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="8dp">
+                            android:padding="8dp"
+                            android:background="?attr/colorSurfaceVariant">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -105,7 +107,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center|left"
-                                    android:textColor="#ff404040"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
                                     android:textSize="14sp" />
 
                                 <TextView
@@ -113,7 +115,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:gravity="center|left"
-                                    android:textColor="#ff7d7d7d"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
                                     android:textSize="12sp" />
                             </LinearLayout>
 
@@ -127,7 +129,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center|left"
-                                    android:textColor="#ff404040"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
                                     android:textSize="14sp" />
 
                                 <TextView
@@ -135,7 +137,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:gravity="center|left"
-                                    android:textColor="#ff7d7d7d"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
                                     android:textSize="12sp" />
                             </LinearLayout>
                         </LinearLayout>
@@ -166,7 +168,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:textColor="#ff4d4d4d"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="14sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -180,7 +182,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="8dp">
+                            android:padding="8dp"
+                            android:background="?attr/colorSurfaceVariant">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -193,7 +196,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center|left"
-                                    android:textColor="#ff404040"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
                                     android:textSize="14sp" />
 
                                 <TextView
@@ -201,7 +204,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:gravity="center|left"
-                                    android:textColor="#ff7d7d7d"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
                                     android:textSize="12sp" />
                             </LinearLayout>
 
@@ -215,7 +218,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center|left"
-                                    android:textColor="#ff404040"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
                                     android:textSize="14sp" />
 
                                 <TextView
@@ -223,7 +226,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:gravity="center|left"
-                                    android:textColor="#ff7d7d7d"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
                                     android:textSize="12sp" />
                             </LinearLayout>
                         </LinearLayout>
@@ -254,7 +257,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:textColor="#ff4d4d4d"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="14sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -268,7 +271,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="8dp">
+                            android:padding="8dp"
+                            android:background="?attr/colorSurfaceVariant">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -281,7 +285,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center|left"
-                                    android:textColor="#ff404040"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
                                     android:textSize="14sp" />
 
                                 <TextView
@@ -289,7 +293,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:gravity="center|left"
-                                    android:textColor="#ff7d7d7d"
+                                    android:textColor="?attr/colorSurfaceVariant"
                                     android:textSize="12sp" />
                             </LinearLayout>
 
@@ -303,7 +307,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center|left"
-                                    android:textColor="#ff404040"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
                                     android:textSize="14sp" />
 
                                 <TextView
@@ -311,7 +315,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:gravity="center|left"
-                                    android:textColor="#ff7d7d7d"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
                                     android:textSize="12sp" />
                             </LinearLayout>
                         </LinearLayout>
@@ -337,7 +341,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:textColor="#ff4d4d4d"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="14sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -360,7 +364,6 @@
             android:id="@+id/btn_console"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#ffffffff"
             android:textSize="@dimen/text_size_button_material"
             android:theme="@style/AppTheme.Button.LightBlue" />
     </LinearLayout>

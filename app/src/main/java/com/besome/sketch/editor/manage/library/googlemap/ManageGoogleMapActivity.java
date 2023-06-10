@@ -44,6 +44,7 @@ import a.a.a.wB;
 import a.a.a.wq;
 import a.a.a.yB;
 import mod.hey.studios.util.Helper;
+import mod.tsd.ui.MaterialColorsHelper;
 
 public class ManageGoogleMapActivity extends BaseAppCompatActivity implements View.OnClickListener {
 
@@ -190,6 +191,7 @@ public class ManageGoogleMapActivity extends BaseAppCompatActivity implements Vi
         getSupportActionBar().setTitle("GoogleMap Settings");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
+        MaterialColorsHelper.setUpToolbarNavigationIconColor(this,toolbar.getNavigationIcon());
         toolbar.setNavigationOnClickListener(Helper.getBackPressedClickListener(this));
         LinearLayout switchLayout = findViewById(R.id.layout_switch);
         switchLayout.setOnClickListener(this);

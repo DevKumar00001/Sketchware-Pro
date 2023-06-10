@@ -15,6 +15,7 @@ import com.sketchware.remod.R;
 
 import a.a.a.aB;
 import mod.hey.studios.util.Helper;
+import mod.tsd.ui.MaterialColorsHelper;
 
 public class ManageCompatActivity extends BaseAppCompatActivity implements View.OnClickListener {
 
@@ -88,6 +89,7 @@ public class ManageCompatActivity extends BaseAppCompatActivity implements View.
         getSupportActionBar().setTitle(Helper.getResString(R.string.design_library_title_appcompat_and_design));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
+        MaterialColorsHelper.setUpToolbarNavigationIconColor(this,toolbar.getNavigationIcon());
         toolbar.setNavigationOnClickListener(Helper.getBackPressedClickListener(this));
 
         compatLibraryBean = getIntent().getParcelableExtra("compat");
