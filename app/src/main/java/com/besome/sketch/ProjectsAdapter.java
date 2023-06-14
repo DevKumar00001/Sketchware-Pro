@@ -65,13 +65,14 @@ public class ProjectsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             if (allProjects.size() > 0) {
                 if (shownSpecialActions == 2) {
                     shownSpecialActions = 1;
-                    notifyItemRemoved(0);
+                    notifyItemChanged(0);
+                    notifyItemRemoved(1);
                 }
             } else {
                 if (shownSpecialActions == 1) {
+                    shownSpecialActions = 2;
                     notifyItemChanged(0);
                     notifyItemInserted(1);
-                    shownSpecialActions = 2;
                 }
             }
         }
@@ -139,8 +140,14 @@ public class ProjectsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             }
         } else {
             if (shownSpecialActions > 0) {
-                shownSpecialActions = 0;
-                notifyItemRemoved(0);
+                if (shownSpecialActions == 1) {
+                    shownSpecialActions = 0;
+                    notifyItemRemoved(0);
+                } else {
+                    shownSpecialActions = 0;
+                    notifyItemRemoved(0);
+                    notifyItemRemoved(1);
+                }
             }
         }
     }
