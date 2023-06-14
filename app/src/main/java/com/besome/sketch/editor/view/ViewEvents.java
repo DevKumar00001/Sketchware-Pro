@@ -36,7 +36,7 @@ import mod.hey.studios.util.Helper;
 public class ViewEvents extends LinearLayout {
     private String sc_id;
     private ProjectFileBean projectFileBean;
-    private ArrayList<EventBean> events;
+    private ArrayList < EventBean > events;
     private RecyclerView eventsList;
     private Qs eventClickListener;
     private EventAdapter eventAdapter;
@@ -53,7 +53,7 @@ public class ViewEvents extends LinearLayout {
 
     private void initialize(Context context) {
         wB.a(context, this, R.layout.view_events);
-        events = new ArrayList<>();
+        events = new ArrayList < > ();
         eventsList = findViewById(R.id.list_events);
         eventsList.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
@@ -73,10 +73,10 @@ public class ViewEvents extends LinearLayout {
         this.projectFileBean = projectFileBean;
         String[] viewEvents = oq.c(viewBean.getClassInfo());
         events.clear();
-        ArrayList<EventBean> alreadyAddedEvents = jC.a(sc_id).g(projectFileBean.getJavaName());
-        for (String event : viewEvents) {
+        ArrayList < EventBean > alreadyAddedEvents = jC.a(sc_id).g(projectFileBean.getJavaName());
+        for (String event: viewEvents) {
             boolean eventAlreadyInActivity = false;
-            for (EventBean bean : alreadyAddedEvents) {
+            for (EventBean bean: alreadyAddedEvents) {
                 if (bean.eventType == EventBean.EVENT_TYPE_VIEW && viewBean.id.equals(bean.targetId) && event.equals(bean.eventName)) {
                     eventAlreadyInActivity = true;
                     break;
@@ -105,7 +105,7 @@ public class ViewEvents extends LinearLayout {
         }
     }
 
-    private class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> {
+    private class EventAdapter extends RecyclerView.Adapter < EventAdapter.ViewHolder > {
 
         private class ViewHolder extends RecyclerView.ViewHolder {
             public final LinearLayout container;
@@ -128,13 +128,13 @@ public class ViewEvents extends LinearLayout {
             if (eventBean.isSelected) {
                 holder.addAvailableIcon.setVisibility(View.GONE);
                 mB.a(holder.icon, 1);
-                holder.container.setOnLongClickListener(v -> {
+                holder.container.setOnLongClickListener(v - > {
                     aB dialog = new aB((Activity) getContext());
                     dialog.a(R.drawable.delete_96);
                     dialog.b("Confirm Delete");
                     dialog.a("Click on Confirm to delete selected event.");
-                    
-                    dialog.b("Delete", del -> {
+
+                    dialog.b("Delete", del - > {
                         dialog.dismiss();
                         EventBean.deleteEvent(sc_id, eventBean, projectFileBean);
                         bB.a(getContext(), xB.b().a(getContext(), R.string.common_message_complete_delete), 0).show();
@@ -145,11 +145,11 @@ public class ViewEvents extends LinearLayout {
                     dialog.show();
                     return true;
                 });
-                holder.container.setOnClickListener(v -> createEvent(position));
+                holder.container.setOnClickListener(v - > createEvent(position));
             } else {
                 holder.addAvailableIcon.setVisibility(View.VISIBLE);
                 mB.a(holder.icon, 0);
-                holder.container.setOnClickListener(v -> createEvent(position));
+                holder.container.setOnClickListener(v - > createEvent(position));
             }
             holder.icon.setImageResource(oq.a(eventBean.eventName));
             holder.name.setText(eventBean.eventName);

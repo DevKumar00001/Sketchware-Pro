@@ -11,7 +11,7 @@ import a.a.a.eC;
 import a.a.a.jC;
 
 public class EventBean extends CollapsibleBean implements Parcelable {
-    public static final Parcelable.Creator<EventBean> CREATOR = new Parcelable.Creator<>() {
+    public static final Parcelable.Creator < EventBean > CREATOR = new Parcelable.Creator < > () {
         @Override
         public EventBean createFromParcel(Parcel source) {
             return new EventBean(source);
@@ -54,7 +54,7 @@ public class EventBean extends CollapsibleBean implements Parcelable {
         eventName = other.readString();
     }
 
-    public static Parcelable.Creator<EventBean> getCreator() {
+    public static Parcelable.Creator < EventBean > getCreator() {
         return CREATOR;
     }
 
@@ -74,7 +74,7 @@ public class EventBean extends CollapsibleBean implements Parcelable {
                 return R.drawable.widget_module;
         }
     }
-    
+
     public static void deleteEvent(String sc_id, EventBean event, ProjectFileBean projectFileBean) {
         jC.a(sc_id).d(projectFileBean.getJavaName(), event.targetId, event.eventName);
         eC a2 = jC.a(sc_id);
@@ -136,8 +136,7 @@ public class EventBean extends CollapsibleBean implements Parcelable {
         return targetId + SEPARATOR + eventName;
     }
 
-    public void print() {
-    }
+    public void print() {}
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {

@@ -61,20 +61,20 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
     private CategoryAdapter categoryAdapter;
     private EventAdapter eventAdapter;
     private FloatingActionButton fab;
-    private HashMap<Integer, ArrayList<EventBean>> events;
-    private ArrayList<EventBean> moreBlocks;
-    private ArrayList<EventBean> viewEvents;
-    private ArrayList<EventBean> componentEvents;
-    private ArrayList<EventBean> activityEvents;
-    private ArrayList<EventBean> drawerViewEvents;
+    private HashMap < Integer, ArrayList < EventBean >> events;
+    private ArrayList < EventBean > moreBlocks;
+    private ArrayList < EventBean > viewEvents;
+    private ArrayList < EventBean > componentEvents;
+    private ArrayList < EventBean > activityEvents;
+    private ArrayList < EventBean > drawerViewEvents;
     private TextView noEvents;
     private TextView importMoreBlockFromCollection;
     private String sc_id;
-    private ArrayList<Pair<Integer, String>> toBeAddedVariables;
-    private ArrayList<Pair<Integer, String>> toBeAddedLists;
-    private ArrayList<ProjectResourceBean> toBeAddedImages;
-    private ArrayList<ProjectResourceBean> toBeAddedSounds;
-    private ArrayList<ProjectResourceBean> toBeAddedFonts;
+    private ArrayList < Pair < Integer, String >> toBeAddedVariables;
+    private ArrayList < Pair < Integer, String >> toBeAddedLists;
+    private ArrayList < ProjectResourceBean > toBeAddedImages;
+    private ArrayList < ProjectResourceBean > toBeAddedSounds;
+    private ArrayList < ProjectResourceBean > toBeAddedFonts;
     private final oB fileUtil = new oB();
 
     public static int a(int i) {
@@ -158,9 +158,9 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
 
     private void maybeAddImageToListOfToBeAddedImages(String imageName) {
         if (toBeAddedImages == null) {
-            toBeAddedImages = new ArrayList<>();
+            toBeAddedImages = new ArrayList < > ();
         }
-        for (String imageInProjectName : jC.d(sc_id).m()) {
+        for (String imageInProjectName: jC.d(sc_id).m()) {
             if (imageInProjectName.equals(imageName)) {
                 return;
             }
@@ -168,7 +168,7 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
         ProjectResourceBean image = Op.g().a(imageName);
         if (image != null) {
             boolean alreadyToBeAdded = false;
-            for (ProjectResourceBean toBeAddedImage : toBeAddedImages) {
+            for (ProjectResourceBean toBeAddedImage: toBeAddedImages) {
                 if (toBeAddedImage.resName.equals(imageName)) {
                     alreadyToBeAdded = true;
                     break;
@@ -187,7 +187,7 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
             componentEvents.clear();
             activityEvents.clear();
             drawerViewEvents.clear();
-            for (Pair<String, String> moreBlock : jC.a(sc_id).i(currentActivity.getJavaName())) {
+            for (Pair < String, String > moreBlock: jC.a(sc_id).i(currentActivity.getJavaName())) {
                 EventBean eventBean = new EventBean(EventBean.EVENT_TYPE_ETC, -1, moreBlock.first, "moreBlock");
                 eventBean.initValue();
                 moreBlocks.add(eventBean);
@@ -195,7 +195,7 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
             EventBean eventBean2 = new EventBean(EventBean.EVENT_TYPE_ACTIVITY, -1, "onCreate", "initializeLogic");
             eventBean2.initValue();
             activityEvents.add(eventBean2);
-            for (EventBean eventBean : jC.a(sc_id).g(currentActivity.getJavaName())) {
+            for (EventBean eventBean: jC.a(sc_id).g(currentActivity.getJavaName())) {
                 eventBean.initValue();
                 int i = eventBean.eventType;
                 if (i == EventBean.EVENT_TYPE_VIEW) {
@@ -230,9 +230,9 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
 
     private void maybeAddFontToListOfToBeAddedFonts(String fontName) {
         if (toBeAddedFonts == null) {
-            toBeAddedFonts = new ArrayList<>();
+            toBeAddedFonts = new ArrayList < > ();
         }
-        for (String fontInProjectName : jC.d(sc_id).k()) {
+        for (String fontInProjectName: jC.d(sc_id).k()) {
             if (fontInProjectName.equals(fontName)) {
                 return;
             }
@@ -240,7 +240,7 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
         ProjectResourceBean font = Np.g().a(fontName);
         if (font != null) {
             boolean alreadyToBeAdded = false;
-            for (ProjectResourceBean toBeAddedFont : toBeAddedFonts) {
+            for (ProjectResourceBean toBeAddedFont: toBeAddedFonts) {
                 if (toBeAddedFont.resName.equals(fontName)) {
                     alreadyToBeAdded = true;
                     break;
@@ -266,8 +266,8 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
 
     public void c() {
         if (currentActivity != null) {
-            for (Map.Entry<Integer, ArrayList<EventBean>> entry : events.entrySet()) {
-                for (EventBean bean : entry.getValue()) {
+            for (Map.Entry < Integer, ArrayList < EventBean >> entry: events.entrySet()) {
+                for (EventBean bean: entry.getValue()) {
                     bean.initValue();
                 }
             }
@@ -305,12 +305,12 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
                 }
             }
         });
-        events = new HashMap<>();
-        moreBlocks = new ArrayList<>();
-        viewEvents = new ArrayList<>();
-        componentEvents = new ArrayList<>();
-        activityEvents = new ArrayList<>();
-        drawerViewEvents = new ArrayList<>();
+        events = new HashMap < > ();
+        moreBlocks = new ArrayList < > ();
+        viewEvents = new ArrayList < > ();
+        componentEvents = new ArrayList < > ();
+        activityEvents = new ArrayList < > ();
+        drawerViewEvents = new ArrayList < > ();
         events.put(0, activityEvents);
         events.put(1, viewEvents);
         events.put(2, componentEvents);
@@ -318,16 +318,16 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
         events.put(4, moreBlocks);
         importMoreBlockFromCollection = parent.findViewById(R.id.tv_import);
         importMoreBlockFromCollection.setText(xB.b().a(getContext(), R.string.logic_button_import_more_block));
-        importMoreBlockFromCollection.setOnClickListener(v -> showImportMoreBlockFromCollectionsDialog());
+        importMoreBlockFromCollection.setOnClickListener(v - > showImportMoreBlockFromCollectionsDialog());
     }
 
     private void addMoreBlockFromCollectionsHandleVariables(MoreBlockCollectionBean moreBlock) {
-        toBeAddedVariables = new ArrayList<>();
-        toBeAddedLists = new ArrayList<>();
-        toBeAddedImages = new ArrayList<>();
-        toBeAddedSounds = new ArrayList<>();
-        toBeAddedFonts = new ArrayList<>();
-        for (BlockBean next : moreBlock.blocks) {
+        toBeAddedVariables = new ArrayList < > ();
+        toBeAddedLists = new ArrayList < > ();
+        toBeAddedImages = new ArrayList < > ();
+        toBeAddedSounds = new ArrayList < > ();
+        toBeAddedFonts = new ArrayList < > ();
+        for (BlockBean next: moreBlock.blocks) {
             if (next.opCode.equals("getVar")) {
                 if (next.type.equals("b")) {
                     maybeAddVariableToListOfToBeAddedVariables(0, next.spec);
@@ -347,7 +347,7 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
                     }
                 }
             }
-            ArrayList<Gx> paramClassInfo = next.getParamClassInfo();
+            ArrayList < Gx > paramClassInfo = next.getParamClassInfo();
             if (paramClassInfo.size() > 0) {
                 for (int i = 0; i < paramClassInfo.size(); i++) {
                     Gx gx = paramClassInfo.get(i);
@@ -400,14 +400,14 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
         editText.setImeOptions(EditorInfo.IME_ACTION_DONE);
         NB nb = new NB(getContext(), a2.findViewById(R.id.ti_input), Pp.h().g());
         aBVar.a(a2);
-        aBVar.b(xB.b().a(getContext(), R.string.common_word_save), v -> {
+        aBVar.b(xB.b().a(getContext(), R.string.common_word_save), v - > {
             if (nb.b()) {
                 saveMoreBlockToCollection(editText.getText().toString(), moreBlocks.get(moreBlockPosition));
                 mB.a(getContext(), editText);
                 aBVar.dismiss();
             }
         });
-        aBVar.a(xB.b().a(getContext(), R.string.common_word_cancel), v -> {
+        aBVar.a(xB.b().a(getContext(), R.string.common_word_cancel), v - > {
             mB.a(getContext(), editText);
             aBVar.dismiss();
         });
@@ -417,7 +417,7 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
     private void resetEvent(EventBean event) {
         eC a2 = jC.a(sc_id);
         String javaName = currentActivity.getJavaName();
-        a2.a(javaName, event.targetId + "_" + event.eventName, new ArrayList<>());
+        a2.a(javaName, event.targetId + "_" + event.eventName, new ArrayList < > ());
         bB.a(getContext(), xB.b().a(getContext(), R.string.common_message_complete_reset), 0).show();
     }
 
@@ -425,7 +425,7 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
         String blockName = ReturnMoreblockManager.getMbName(ReturnMoreblockManager.getMbNameWithTypeFromSpec(moreBlock.spec));
 
         boolean duplicateNameFound = false;
-        for (Pair<String, String> projectMoreBlock : jC.a(sc_id).i(currentActivity.getJavaName())) {
+        for (Pair < String, String > projectMoreBlock: jC.a(sc_id).i(currentActivity.getJavaName())) {
             if (ReturnMoreblockManager.getMbName(projectMoreBlock.first).equals(blockName)) {
                 duplicateNameFound = true;
                 break;
@@ -456,28 +456,28 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
     }
 
     private void showImportMoreBlockFromCollectionsDialog() {
-        ArrayList<MoreBlockCollectionBean> moreBlocksInCollections = Pp.h().f();
+        ArrayList < MoreBlockCollectionBean > moreBlocksInCollections = Pp.h().f();
         new MoreblockImporterDialog(getActivity(), moreBlocksInCollections, this).show();
     }
 
     private void maybeAddVariableToListOfToBeAddedVariables(int variableType, String variableName) {
         if (toBeAddedVariables == null) {
-            toBeAddedVariables = new ArrayList<>();
+            toBeAddedVariables = new ArrayList < > ();
         }
-        for (Pair<Integer, String> variable : jC.a(sc_id).k(currentActivity.getJavaName())) {
+        for (Pair < Integer, String > variable: jC.a(sc_id).k(currentActivity.getJavaName())) {
             if (variable.first == variableType && variable.second.equals(variableName)) {
                 return;
             }
         }
         boolean alreadyToBeAdded = false;
-        for (Pair<Integer, String> toBeAddedVariable : toBeAddedVariables) {
+        for (Pair < Integer, String > toBeAddedVariable: toBeAddedVariables) {
             if (toBeAddedVariable.first == variableType && toBeAddedVariable.second.equals(variableName)) {
                 alreadyToBeAdded = true;
                 break;
             }
         }
         if (!alreadyToBeAdded) {
-            toBeAddedVariables.add(new Pair<>(variableType, variableName));
+            toBeAddedVariables.add(new Pair < > (variableType, variableName));
         }
     }
 
@@ -494,14 +494,14 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
         newName.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
         newName.setImeOptions(EditorInfo.IME_ACTION_DONE);
 
-        List<String> moreBlockNamesWithoutReturnTypes = new LinkedList<>();
-        for (String moreBlockName : jC.a(sc_id).a(currentActivity)) {
+        List < String > moreBlockNamesWithoutReturnTypes = new LinkedList < > ();
+        for (String moreBlockName: jC.a(sc_id).a(currentActivity)) {
             moreBlockNamesWithoutReturnTypes.add(ReturnMoreblockManager.getMbName(moreBlockName));
         }
 
-        ZB validator = new ZB(getContext(), customView.findViewById(R.id.ti_input), uq.b, uq.a(), new ArrayList<>(moreBlockNamesWithoutReturnTypes));
+        ZB validator = new ZB(getContext(), customView.findViewById(R.id.ti_input), uq.b, uq.a(), new ArrayList < > (moreBlockNamesWithoutReturnTypes));
         dialog.a(customView);
-        dialog.b(xB.b().a(getContext(), R.string.common_word_save), v -> {
+        dialog.b(xB.b().a(getContext(), R.string.common_word_save), v - > {
             if (validator.b()) {
                 String moreBlockName = ReturnMoreblockManager.getMbName(ReturnMoreblockManager.getMbNameWithTypeFromSpec(moreBlock.spec));
                 moreBlock.spec = newName.getText().toString() + moreBlock.spec.substring(moreBlockName.length());
@@ -511,7 +511,7 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
                 dialog.dismiss();
             }
         });
-        dialog.a(xB.b().a(getContext(), R.string.common_word_cancel), v -> {
+        dialog.a(xB.b().a(getContext(), R.string.common_word_cancel), v - > {
             mB.a(getContext(), newName);
             dialog.dismiss();
         });
@@ -520,9 +520,9 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
 
     private void maybeAddSoundToListOfToBeAddedSounds(String soundName) {
         if (toBeAddedSounds == null) {
-            toBeAddedSounds = new ArrayList<>();
+            toBeAddedSounds = new ArrayList < > ();
         }
-        for (String soundInProjectName : jC.d(sc_id).p()) {
+        for (String soundInProjectName: jC.d(sc_id).p()) {
             if (soundInProjectName.equals(soundName)) {
                 return;
             }
@@ -530,7 +530,7 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
         ProjectResourceBean sound = Qp.g().a(soundName);
         if (sound != null) {
             boolean alreadyToBeAdded = false;
-            for (ProjectResourceBean toBeAddedSound : toBeAddedSounds) {
+            for (ProjectResourceBean toBeAddedSound: toBeAddedSounds) {
                 if (toBeAddedSound.resName.equals(soundName)) {
                     alreadyToBeAdded = true;
                     break;
@@ -551,22 +551,22 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
         aBVar.b(xB.b().a(getContext(), R.string.logic_more_block_title_add_variable_resource));
         aBVar.a(R.drawable.break_warning_96_red);
         aBVar.a(xB.b().a(getContext(), R.string.logic_more_block_desc_add_variable_resource));
-        aBVar.b(xB.b().a(getContext(), R.string.common_word_continue), v -> {
-            for (Pair<Integer, String> pair : toBeAddedVariables) {
+        aBVar.b(xB.b().a(getContext(), R.string.common_word_continue), v - > {
+            for (Pair < Integer, String > pair: toBeAddedVariables) {
                 eC eC = jC.a(sc_id);
                 eC.c(currentActivity.getJavaName(), pair.first, pair.second);
             }
-            for (Pair<Integer, String> pair : toBeAddedLists) {
+            for (Pair < Integer, String > pair: toBeAddedLists) {
                 eC eC = jC.a(sc_id);
                 eC.b(currentActivity.getJavaName(), pair.first, pair.second);
             }
-            for (ProjectResourceBean bean : toBeAddedImages) {
+            for (ProjectResourceBean bean: toBeAddedImages) {
                 copyImageFromCollectionsToProject(bean.resName);
             }
-            for (ProjectResourceBean bean : toBeAddedSounds) {
+            for (ProjectResourceBean bean: toBeAddedSounds) {
                 copySoundFromCollectionsToProject(bean.resName);
             }
-            for (ProjectResourceBean bean : toBeAddedFonts) {
+            for (ProjectResourceBean bean: toBeAddedFonts) {
                 copyFontFromCollectionsToProject(bean.resName);
             }
             addMoreBlockFromCollectionsCreateEvent(moreBlock);
@@ -596,8 +596,8 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
         }
     }
 
-    private void initializeEvents(ArrayList<EventBean> events) {
-        for (EventBean bean : events) {
+    private void initializeEvents(ArrayList < EventBean > events) {
+        for (EventBean bean: events) {
             bean.initValue();
         }
     }
@@ -617,12 +617,12 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
         String b2 = jC.a(sc_id).b(currentActivity.getJavaName(), moreBlock.targetId);
         eC a2 = jC.a(sc_id);
         String javaName = currentActivity.getJavaName();
-        ArrayList<BlockBean> moreBlockBlocks = a2.a(javaName, moreBlock.targetId + "_" + moreBlock.eventName);
+        ArrayList < BlockBean > moreBlockBlocks = a2.a(javaName, moreBlock.targetId + "_" + moreBlock.eventName);
 
         boolean hasAnyBlocks = false;
         boolean failedToAddResourceToCollections = false;
-        for (BlockBean next : moreBlockBlocks) {
-            ArrayList<Gx> paramClassInfo = next.getParamClassInfo();
+        for (BlockBean next: moreBlockBlocks) {
+            ArrayList < Gx > paramClassInfo = next.getParamClassInfo();
             if (paramClassInfo.size() > 0) {
                 for (int i = 0; i < paramClassInfo.size(); i++) {
                     Gx gx = paramClassInfo.get(i);
@@ -665,23 +665,23 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
 
     private void maybeAddListToListOfToBeAddedLists(int listType, String listName) {
         if (toBeAddedLists == null) {
-            toBeAddedLists = new ArrayList<>();
+            toBeAddedLists = new ArrayList < > ();
         }
-        for (Pair<Integer, String> list : jC.a(sc_id).j(currentActivity.getJavaName())) {
+        for (Pair < Integer, String > list: jC.a(sc_id).j(currentActivity.getJavaName())) {
             if (list.first == listType && list.second.equals(listName)) {
                 return;
             }
         }
 
         boolean alreadyToBeAdded = false;
-        for (Pair<Integer, String> toBeAddedList : toBeAddedLists) {
+        for (Pair < Integer, String > toBeAddedList: toBeAddedLists) {
             if (toBeAddedList.first == listType && toBeAddedList.second.equals(listName)) {
                 alreadyToBeAdded = true;
                 break;
             }
         }
         if (!alreadyToBeAdded) {
-            toBeAddedLists.add(new Pair<>(listType, listName));
+            toBeAddedLists.add(new Pair < > (listType, listName));
         }
     }
 
@@ -706,7 +706,7 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
         refreshEvents();
     }
 
-    private class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
+    private class CategoryAdapter extends RecyclerView.Adapter < CategoryAdapter.ViewHolder > {
         private int index = -1;
 
         @Override
@@ -732,14 +732,14 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
                 holder.icon.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
             } else {
                 ViewPropertyAnimatorCompat animator1 = ViewCompat.animate(holder.icon);
-                animator1.scaleX(0.8f);
-                animator1.scaleY(0.8f);
+                animator1.scaleX(0.8 f);
+                animator1.scaleY(0.8 f);
                 animator1.setDuration(300);
                 animator1.setInterpolator(new DecelerateInterpolator());
                 animator1.start();
                 ViewPropertyAnimatorCompat animator2 = ViewCompat.animate(holder.icon);
-                animator2.scaleX(0.8f);
-                animator2.scaleY(0.8f);
+                animator2.scaleX(0.8 f);
+                animator2.scaleY(0.8 f);
                 animator2.setDuration(300);
                 animator2.setInterpolator(new DecelerateInterpolator());
                 animator2.start();
@@ -791,9 +791,9 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
         }
     }
 
-    private class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> {
+    private class EventAdapter extends RecyclerView.Adapter < EventAdapter.ViewHolder > {
         private int lastSelectedItem = -1;
-        private ArrayList<EventBean> currentCategoryEvents = new ArrayList<>();
+        private ArrayList < EventBean > currentCategoryEvents = new ArrayList < > ();
 
         @Override
         public int getItemCount() {
@@ -868,7 +868,7 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
             holder.optionContainer.getLayoutParams().height = ViewGroup.LayoutParams.WRAP_CONTENT;
         }
 
-        public void a(ArrayList<EventBean> arrayList) {
+        public void a(ArrayList < EventBean > arrayList) {
             if (arrayList.size() == 0) {
                 noEvents.setVisibility(View.VISIBLE);
             } else {
@@ -913,7 +913,7 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
                 optionsLayout = new CollapsibleEventLayout(getContext());
                 optionsLayout.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
                 options.addView(optionsLayout);
-                optionsLayout.setButtonOnClickListener(v -> {
+                optionsLayout.setButtonOnClickListener(v - > {
                     if (!mB.a()) {
                         lastSelectedItem = getLayoutPosition();
                         EventBean eventBean = (events.get(categoryAdapter.index)).get(lastSelectedItem);
@@ -953,7 +953,7 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
                         }
                     }
                 });
-                menu.setOnClickListener(v -> {
+                menu.setOnClickListener(v - > {
                     lastSelectedItem = getLayoutPosition();
                     EventBean eventBean = events.get(categoryAdapter.index).get(lastSelectedItem);
                     if (eventBean.isCollapsed) {
@@ -964,7 +964,7 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
                         hideOptions();
                     }
                 });
-                itemView.setOnLongClickListener(v -> {
+                itemView.setOnLongClickListener(v - > {
                     lastSelectedItem = getLayoutPosition();
                     EventBean eventBean = events.get(categoryAdapter.index).get(lastSelectedItem);
                     if (eventBean.isCollapsed) {
@@ -976,7 +976,7 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
                     }
                     return true;
                 });
-                itemView.setOnClickListener(v -> {
+                itemView.setOnClickListener(v - > {
                     if (!mB.a()) {
                         lastSelectedItem = getLayoutPosition();
                         EventBean eventBean = events.get(categoryAdapter.index).get(lastSelectedItem);
@@ -989,8 +989,7 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
                 gB.a(menu, 0, null);
                 gB.a(optionContainer, 200, new Animator.AnimatorListener() {
                     @Override
-                    public void onAnimationStart(Animator animation) {
-                    }
+                    public void onAnimationStart(Animator animation) {}
 
                     @Override
                     public void onAnimationEnd(Animator animation) {
@@ -998,12 +997,10 @@ public class rs extends qA implements View.OnClickListener, MoreblockImporterDia
                     }
 
                     @Override
-                    public void onAnimationCancel(Animator animation) {
-                    }
+                    public void onAnimationCancel(Animator animation) {}
 
                     @Override
-                    public void onAnimationRepeat(Animator animation) {
-                    }
+                    public void onAnimationRepeat(Animator animation) {}
                 });
             }
 
