@@ -134,10 +134,12 @@ public class ViewProperty extends LinearLayout implements Kw {
             if (selectedGroupId == (Integer) item.getTag()) {
                 item.setSelected(true);
                 item.title.setTextColor(Color.WHITE);
+                // item.title.setTextColor(Color.parseColor(MaterialColorsHelper.getMaterialColor(context, R.attr.colorOnPrimary)));
                 item.animate().scaleX(1).scaleY(1).alpha(1).start();
             } else {
                 item.setSelected(false);
                 item.title.setTextColor(0xff1d2129);
+                // item.title.setTextColor(Color.parseColor(MaterialColorsHelper.getMaterialColor(context, R.attr.colorOnSurface)));
                 item.animate().scaleX(0.8f).scaleY(0.8f).alpha(0.6f).start();
             }
         }
@@ -211,6 +213,7 @@ public class ViewProperty extends LinearLayout implements Kw {
     }
 
     private void initialize(Context context) {
+        
         wB.a(context, this, R.layout.view_property);
         layoutPropertyGroup = findViewById(R.id.layout_property_group);
         CustomHorizontalScrollView hcvProperty = findViewById(R.id.hcv_property);

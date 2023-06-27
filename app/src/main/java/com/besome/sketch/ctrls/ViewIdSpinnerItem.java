@@ -11,15 +11,19 @@ import com.sketchware.remod.R;
 
 import a.a.a.wB;
 
+import mod.tsd.ui.MaterialColorsHelper;
+
 public class ViewIdSpinnerItem extends LinearLayout {
 
     private ImageView icon;
     private TextView name;
     private ImageView selected;
     private boolean isDropDown;
+    private Context context;
 
     public ViewIdSpinnerItem(Context context) {
         super(context);
+        this.context = context;
         initialize(context);
     }
 
@@ -35,7 +39,7 @@ public class ViewIdSpinnerItem extends LinearLayout {
             a(false, 0xffff5555, 0xfff8f820);
         } else {
             name.setText(text);
-            a(true, 0xff757575, 0xffffffff);
+            a(true, MaterialColorsHelper.getMaterialColorInt(context, R.attr.colorOnSurface), MaterialColorsHelper.getMaterialColorInt(context, R.attr.colorOnPrimary));
         }
 
         icon.setImageResource(iconResId);

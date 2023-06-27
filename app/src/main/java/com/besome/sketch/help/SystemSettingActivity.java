@@ -85,6 +85,7 @@ public class SystemSettingActivity extends BaseAppCompatActivity {
             @Override
             public void onClick(View _view) {
                 MaterialTheme.edit().putString("MaterialTheme","BrownishLight").commit();
+                MaterialTheme.edit().putString("MaterialThemeType", "Light").commit();
                 MaterialThemeEnable.edit().putBoolean("MaterialThemeEnable",false).commit();
                 // SketchwareUtil.showMessage(SystemSettingActivity.this,"App theme will be applied after a restart : ".concat(MaterialTheme.getString("MaterialTheme","Test")));
                 recreate();
@@ -94,6 +95,7 @@ public class SystemSettingActivity extends BaseAppCompatActivity {
             @Override
             public void onClick(View _view) {
                 MaterialTheme.edit().putString("MaterialTheme","BrownishDark").commit();
+                MaterialTheme.edit().putString("MaterialThemeType", "Dark").commit();
                 MaterialThemeEnable.edit().putBoolean("MaterialThemeEnable",false).commit();
                 // SketchwareUtil.showMessage(SystemSettingActivity.this,"App theme will be applied after a restart : ".concat(MaterialTheme.getString("MaterialTheme","Test")));
                 recreate();
@@ -103,6 +105,7 @@ public class SystemSettingActivity extends BaseAppCompatActivity {
             @Override
             public void onClick(View _view) {
                 MaterialTheme.edit().putString("MaterialTheme","GreenLight").commit();
+                MaterialTheme.edit().putString("MaterialThemeType", "Light").commit();
                 MaterialThemeEnable.edit().putBoolean("MaterialThemeEnable",false).commit();
                 // SketchwareUtil.showMessage(SystemSettingActivity.this,"App theme will be applied after a restart : ".concat(MaterialTheme.getString("MaterialTheme","Test")));
                 recreate();
@@ -112,6 +115,7 @@ public class SystemSettingActivity extends BaseAppCompatActivity {
             @Override
             public void onClick(View _view) {
                 MaterialTheme.edit().putString("MaterialTheme","GreenDark").commit();
+                MaterialTheme.edit().putString("MaterialThemeType", "Dark").commit();
                 MaterialThemeEnable.edit().putBoolean("MaterialThemeEnable",false).commit();
                 // SketchwareUtil.showMessage(SystemSettingActivity.this,"App theme will be applied after a restart : ".concat(MaterialTheme.getString("MaterialTheme","Test")));
                 recreate();
@@ -121,6 +125,7 @@ public class SystemSettingActivity extends BaseAppCompatActivity {
             @Override
             public void onClick(View _view) {
                 MaterialTheme.edit().putString("MaterialTheme","LightBlueLight").commit();
+                MaterialTheme.edit().putString("MaterialThemeType", "Light").commit();
                 MaterialThemeEnable.edit().putBoolean("MaterialThemeEnable",false).commit();
                 // SketchwareUtil.showMessage(SystemSettingActivity.this,"App theme will be applied after a restart : ".concat(MaterialTheme.getString("MaterialTheme","Test")));
                 recreate();
@@ -130,6 +135,7 @@ public class SystemSettingActivity extends BaseAppCompatActivity {
             @Override
             public void onClick(View _view) {
                 MaterialTheme.edit().putString("MaterialTheme","LightBlueDark").commit();
+                MaterialTheme.edit().putString("MaterialThemeType", "Dark").commit();
                 MaterialThemeEnable.edit().putBoolean("MaterialThemeEnable",false).commit();
                 // SketchwareUtil.showMessage(SystemSettingActivity.this,"App theme will be applied after a restart : ".concat(MaterialTheme.getString("MaterialTheme","Test")));
                 recreate();
