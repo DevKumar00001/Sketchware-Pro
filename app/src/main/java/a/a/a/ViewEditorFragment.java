@@ -1,11 +1,13 @@
 package a.a.a;
 
 import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -548,6 +550,8 @@ public class ViewEditorFragment extends qA {
 
     @Override
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup parent, Bundle bundle) {
+        Context context = new ContextThemeWrapper(getActivity(), R.style.AppTheme);
+        layoutInflater = layoutInflater.cloneInContext(context);
         ViewGroup viewGroup = (ViewGroup) layoutInflater.inflate(R.layout.fr_graphic_editor, parent, false);
         initialize(viewGroup);
         if (bundle != null) {
