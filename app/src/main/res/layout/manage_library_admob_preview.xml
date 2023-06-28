@@ -63,7 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:textColor="#ff4d4d4d"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="14sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -90,7 +90,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center|left"
-                            android:textColor="#ff404040"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="14sp" />
 
                         <TextView
@@ -98,7 +98,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center|left"
-                            android:textColor="#ff7d7d7d"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -112,7 +112,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center|left"
-                            android:textColor="#ff404040"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="14sp" />
 
                         <TextView
@@ -120,7 +120,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center|left"
-                            android:textColor="#ff7d7d7d"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="12sp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -151,7 +151,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:textColor="#ff4d4d4d"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="14sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -178,7 +178,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center|left"
-                            android:textColor="#ff404040"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="14sp" />
 
                         <TextView
@@ -186,7 +186,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center|left"
-                            android:textColor="#ff7d7d7d"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -200,7 +200,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center|left"
-                            android:textColor="#ff404040"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="14.0sp" />
 
                         <TextView
@@ -208,7 +208,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center|left"
-                            android:textColor="#ff7d7d7d"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="12sp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -240,7 +240,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:text="Rewarded Ad"
-                    android:textColor="#ff4d4d4d"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="14sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -268,7 +268,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center|left"
                             android:text="Ad Name : "
-                            android:textColor="#ff404040"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="14sp" />
 
                         <TextView
@@ -276,7 +276,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center|left"
-                            android:textColor="#ff7d7d7d"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -291,7 +291,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center|left"
                             android:text="Ad Unit ID : "
-                            android:textColor="#ff404040"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="14sp" />
 
                         <TextView
@@ -299,7 +299,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center|left"
-                            android:textColor="#ff7d7d7d"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="12sp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -325,7 +325,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:textColor="#ff4d4d4d"
+                android:textColor="?attr/colorOnSurface"
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>

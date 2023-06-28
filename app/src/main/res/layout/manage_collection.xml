@@ -28,14 +28,15 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:background="?attr/colorSurface"
+                    android:background="?attr/colorSurfaceVariant"
                     android:orientation="vertical">
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/category_list"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:splitMotionEvents="false" />
+                        android:splitMotionEvents="false" 
+                        android:background="?attr/colorSurfaceVariant" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -50,7 +51,7 @@
                         android:layout_height="match_parent"
                         android:background="?attr/colorSurface"
                         android:gravity="center"
-                        android:textColor="@color/grey"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="12sp"
                         android:visibility="gone" />
 
@@ -60,7 +61,7 @@
                         android:layout_height="0dp"
                         android:layout_marginTop="2dp"
                         android:layout_weight="1"
-                        android:background="?attr/colorSurfaceVariant"
+                        android:background="?attr/colorSurface"
                         android:scrollbars="vertical"
                         android:splitMotionEvents="false" />
                 </LinearLayout>

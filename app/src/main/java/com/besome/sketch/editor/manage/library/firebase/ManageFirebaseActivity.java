@@ -33,6 +33,7 @@ import a.a.a.bB;
 import mod.SketchwareUtil;
 import mod.agus.jcoderz.lib.FileUtil;
 import mod.hey.studios.util.Helper;
+import mod.tsd.ui.MaterialColorsHelper;
 
 @SuppressLint("ResourceType")
 public class ManageFirebaseActivity extends BaseAppCompatActivity implements View.OnClickListener {
@@ -172,6 +173,7 @@ public class ManageFirebaseActivity extends BaseAppCompatActivity implements Vie
         getSupportActionBar().setTitle(Helper.getResString(R.string.design_library_firebase_title_firebase_manager));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
+        MaterialColorsHelper.setUpToolbarNavigationIconColor(this ,toolbar.getNavigationIcon());
         toolbar.setNavigationOnClickListener(Helper.getBackPressedClickListener(this));
 
         s = new DB(getApplicationContext(), "P1");

@@ -405,6 +405,7 @@ public class ManageCollectionActivity extends BaseAppCompatActivity implements V
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        mod.tsd.ui.AppThemeApply.setUpTheme(this);
         super.onCreate(savedInstanceState);
         if (!j()) {
             finish();

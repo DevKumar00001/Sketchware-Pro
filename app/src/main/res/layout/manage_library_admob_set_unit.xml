@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:elevation="8dp"
-        app:cardBackgroundColor="#ffffffff">
+        app:cardBackgroundColor="?attr/colorSurface">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
                     android:gravity="center|left"
-                    android:textColor="@color/scolor_blue_01"
+                    android:textColor="?attr/colorPrimary"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -49,7 +49,8 @@
                     android:padding="4dp"
                     android:text="EDIT"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorOnSurface" />
 
                 <ImageView
                     android:id="@+id/img_select_banner"
@@ -72,7 +73,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center|left"
-                    android:textColor="#ff404040"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="14sp" />
 
                 <TextView
@@ -80,7 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center|left"
-                    android:textColor="#ff7d7d7d"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -97,7 +98,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center|left"
-                    android:textColor="#ff404040"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="14sp" />
 
                 <TextView
@@ -105,7 +106,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center|left"
-                    android:textColor="#ff7d7d7d"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
@@ -116,7 +117,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:elevation="8dp"
-        app:cardBackgroundColor="#ffffffff">
+        app:cardBackgroundColor="?attr/colorSurface">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -142,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
                     android:gravity="center|left"
-                    android:textColor="@color/scolor_blue_01"
+                    android:textColor="?attr/colorPrimary"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -154,7 +155,8 @@
                     android:padding="4dp"
                     android:text="EDIT"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorOnSurface" />
 
                 <ImageView
                     android:id="@+id/img_select_inter"
@@ -177,7 +179,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center|left"
-                    android:textColor="#ff404040"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="14sp" />
 
                 <TextView
@@ -185,7 +187,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center|left"
-                    android:textColor="#ff7d7d7d"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -202,7 +204,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center|left"
-                    android:textColor="#ff404040"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="14sp" />
 
                 <TextView
@@ -210,7 +212,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center|left"
-                    android:textColor="#ff7d7d7d"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
@@ -221,7 +223,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:elevation="8dp"
-        app:cardBackgroundColor="#ffffffff">
+        app:cardBackgroundColor="?attr/colorSurface">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -248,7 +250,7 @@
                     android:layout_weight="1.0"
                     android:gravity="center|left"
                     android:text="Rewarded Ad"
-                    android:textColor="@color/scolor_blue_01"
+                    android:textColor="?attr/colorPrimary"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -260,7 +262,8 @@
                     android:padding="4dp"
                     android:text="EDIT"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold" 
+                    android:textColor="?attr/colorOnSurface" />
 
                 <ImageView
                     android:id="@+id/img_select_reward"
@@ -283,7 +286,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center|left"
-                    android:textColor="#ff404040"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="14sp" />
 
                 <TextView
@@ -291,7 +294,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center|left"
-                    android:textColor="#ff7d7d7d"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -308,7 +311,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center|left"
-                    android:textColor="#ff404040"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="14sp" />
 
                 <TextView
@@ -316,7 +319,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center|left"
-                    android:textColor="#ff7d7d7d"
+                    android:textColor="?attr/colorSurface"
                     android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
