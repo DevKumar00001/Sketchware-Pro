@@ -99,7 +99,7 @@ public class BaseAppCompatActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-    	// AppThemeApply.setUpTheme(this);
+    	AppThemeApply.setUpTheme(this);
         super.onCreate(savedInstanceState);
         e = getApplicationContext();
         j = new Zo(getApplicationContext());

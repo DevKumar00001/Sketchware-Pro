@@ -14,13 +14,13 @@
             android:id="@id/ti_name"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/design_library_admob_dialog_add_adunit_hint_adunit_name"
             android:layout_marginLeft="24.0dip"
             android:layout_marginTop="16.0dip"
             android:layout_marginRight="24.0dip">
 
             <EditText
                 android:id="@id/ed_name"
-                android:hint="@string/design_library_admob_dialog_add_adunit_hint_adunit_name"
                 android:layout_width="fill_parent"
                 android:layout_height="40.0dip"
                 android:imeOptions="actionDone"
@@ -34,13 +34,13 @@
             android:id="@id/ti_adunit_id"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/design_library_admob_dialog_add_adunit_hint_adunit_id"
             android:layout_marginLeft="24.0dip"
             android:layout_marginTop="16.0dip"
             android:layout_marginRight="24.0dip">
 
             <EditText
                 android:id="@id/ed_adunit_id"
-                android:hint="@string/design_library_admob_dialog_add_adunit_hint_adunit_id"
                 android:layout_width="fill_parent"
                 android:layout_height="40.0dip"
                 android:imeOptions="actionDone"
