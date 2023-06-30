@@ -2,14 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#ffffffff"
-    android:orientation="vertical"
-    android:theme="@style/AppTheme">
+    android:background="?attr/colorSurface"
+    android:orientation="vertical">
 
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="#fff5f5f5"
+        android:background="?attr/colorSurfaceVariant"
         android:paddingLeft="8dp"
         android:paddingRight="8dp">
 
@@ -51,6 +50,7 @@
                 android:padding="5dp"
                 android:text="use (moreblockName[type|typeName] or\nmoreblockName[type|typeName|typeCode]) for custom moreblock type(S)"
                 android:textSize="14sp"
+                android:textColor="?attr/colorOnSurface"
                 android:textStyle="bold" />
 
             <TextView
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
-                android:textColor="@color/color_primary"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -69,7 +69,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:importantForAutofill="noExcludeDescendants">
+                android:importantForAutofill="noExcludeDescendants"
+                android:textColorHint="?attr/colorPrimary">
 
                 <EditText
                     android:id="@+id/ed_name"
@@ -78,7 +79,8 @@
                     android:imeOptions="actionNext"
                     android:inputType="text"
                     android:lines="1"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    android:textColor="?attr/colorOnSurface" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
@@ -86,7 +88,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/bg_rectangle_white"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:backgroundTint="?attr/colorSurface">
 
                 <TextView
                     android:id="@+id/tv_title_select_mb_type"
@@ -96,7 +99,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginRight="8dp"
                     android:text="Select Moreblock type"
-                    android:textColor="@color/color_primary"
+                    android:textColor="?attr/colorPrimary"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -116,49 +119,65 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="true"
-                            android:text="Void" />
+                            android:text="Void"
+                            android:textColor="?attr/colorOnSurface"
+                            android:buttonTint="?attr/colorPrimary" />
 
                         <RadioButton
                             android:id="@+id/radio_mb_type_string"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="String" />
+                            android:text="String" 
+                            android:textColor="?attr/colorOnSurface"
+                            android:buttonTint="?attr/colorPrimary" />
 
                         <RadioButton
                             android:id="@+id/radio_mb_type_number"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Number" />
+                            android:text="Number"
+                            android:textColor="?attr/colorOnSurface"
+                            android:buttonTint="?attr/colorPrimary" />
 
                         <RadioButton
                             android:id="@+id/radio_mb_type_boolean"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Boolean" />
+                            android:text="Boolean"
+                            android:textColor="?attr/colorOnSurface"
+                            android:buttonTint="?attr/colorPrimary" />
 
                         <RadioButton
                             android:id="@+id/radio_mb_type_map"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Map" />
+                            android:text="Map"
+                            android:textColor="?attr/colorOnSurface"
+                            android:buttonTint="?attr/colorPrimary" />
 
                         <RadioButton
                             android:id="@+id/radio_mb_type_liststring"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="List String" />
+                            android:text="List String"
+                            android:textColor="?attr/colorOnSurface"
+                            android:buttonTint="?attr/colorPrimary" />
 
                         <RadioButton
                             android:id="@+id/radio_mb_type_listmap"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="List Map" />
+                            android:text="List Map"
+                            android:textColor="?attr/colorOnSurface"
+                            android:buttonTint="?attr/colorPrimary" />
 
                         <RadioButton
                             android:id="@+id/radio_mb_type_view"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="View" />
+                            android:text="View"
+                            android:textColor="?attr/colorOnSurface"
+                            android:buttonTint="?attr/colorPrimary" />
                     </RadioGroup>
                 </HorizontalScrollView>
 
@@ -169,7 +188,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginRight="8dp"
-                    android:textColor="@color/color_primary"
+                    android:textColor="?attr/colorPrimary"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -204,6 +223,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="8dp"
                             android:layout_weight="1.0"
+                            android:textColorHint="?attr/colorPrimary"
                             android:importantForAutofill="noExcludeDescendants">
 
                             <EditText
@@ -213,6 +233,7 @@
                                 android:imeOptions="actionNext"
                                 android:inputType="text"
                                 android:lines="1"
+                                android:textColor="?attr/colorSurface"
                                 android:textSize="13sp" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -222,9 +243,7 @@
                             android:layout_height="48dp"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:textColor="#ffffffff"
-                            android:textSize="12sp"
-                            android:theme="@style/AppTheme.Button.Blue" />
+                            android:textSize="12sp" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -236,6 +255,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/bg_rectangle_white"
+                android:backgroundTint="?attr/colorSurface"
                 android:gravity="center_vertical"
                 android:orientation="vertical"
                 android:paddingBottom="8dp">
@@ -255,6 +275,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="8dp"
                         android:layout_weight="1.0"
+                        android:textColorHint="?attr/colorPrimary"
                         android:importantForAutofill="noExcludeDescendants">
 
                         <EditText
@@ -264,6 +285,7 @@
                             android:imeOptions="actionDone"
                             android:inputType="text"
                             android:lines="1"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="13sp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -273,9 +295,7 @@
                         android:layout_height="48dp"
                         android:gravity="center"
                         android:padding="8dp"
-                        android:textColor="#ffffffff"
-                        android:textSize="12sp"
-                        android:theme="@style/AppTheme.Button.Blue" />
+                        android:textSize="12sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -286,7 +306,7 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginRight="8dp"
                 android:text="Custom parameter"
-                android:textColor="@color/color_primary"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -297,6 +317,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/bg_rectangle_white"
+                android:backgroundTint="?attr/colorSurface"
                 android:gravity="center_vertical"
                 android:orientation="vertical"
                 android:paddingBottom="8dp">
@@ -315,6 +336,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="8dp"
                         android:layout_weight="1.0"
+                        android:textColorHint="?attr/colorPrimary"
                         android:importantForAutofill="noExcludeDescendants">
 
                         <EditText
@@ -325,6 +347,7 @@
                             android:imeOptions="actionDone"
                             android:inputType="text"
                             android:lines="1"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="13sp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -333,6 +356,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="8dp"
                         android:layout_weight="1.0"
+                        android:textColorHint="?attr/colorPrimary"
                         android:importantForAutofill="noExcludeDescendants">
 
                         <EditText
@@ -343,6 +367,7 @@
                             android:imeOptions="actionDone"
                             android:inputType="text"
                             android:lines="1"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="13sp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -353,9 +378,7 @@
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="ADD"
-                        android:textColor="#ffffffff"
-                        android:textSize="12sp"
-                        android:theme="@style/AppTheme.Button.Blue" />
+                        android:textSize="12sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

@@ -4,7 +4,6 @@
     android:layout_height="40dp"
     android:layout_marginTop="4dp"
     android:layout_marginBottom="4dp"
-    android:background="?selectableItemBackground"
     android:clickable="true"
     android:focusable="true"
     android:orientation="vertical">
@@ -26,7 +25,8 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp" />
+            android:layout_marginLeft="4dp"
+            android:textColor="?attr/colorOnSurface" />
     </LinearLayout>
 
     <View
@@ -34,5 +34,5 @@
         android:layout_height="1dp"
         android:layout_marginLeft="12dp"
         android:layout_marginRight="12dp"
-        android:background="@color/lighter_grey" />
+        android:background="?attr/colorOnSurface" />
 </LinearLayout>

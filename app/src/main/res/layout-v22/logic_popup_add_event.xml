@@ -3,7 +3,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
         <androidx.recyclerview.widget.RecyclerView android:id="@id/category_list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:splitMotionEvents="false" />
-        <LinearLayout android:orientation="vertical" android:background="@drawable/border_bottom_corner_white_no_stroke" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:background="@drawable/border_bottom_corner_white_no_stroke" android:backgroundTint="?attr/colorSurface" android:layout_width="fill_parent" android:layout_height="fill_parent">
             <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="?attr/colorPrimary" android:id="@id/tv_category" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="16.0dip" android:layout_marginBottom="8.0dip" />
             <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
                 <TextView android:textSize="12.0sp" android:gravity="center" android:id="@id/empty_message" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="32.0dip" />

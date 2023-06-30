@@ -3,7 +3,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="48dp"
-    android:background="?selectableItemBackground"
+    android:background="?attr/colorSurface"
     android:clickable="true"
     android:focusable="true"
     android:gravity="center_vertical"
@@ -14,7 +14,8 @@
         android:id="@+id/tv_preview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:textColor="?attr/colorSurface" />
 
     <ImageView
         android:layout_width="16dp"
