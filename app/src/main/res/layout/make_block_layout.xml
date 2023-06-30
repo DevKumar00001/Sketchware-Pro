@@ -69,8 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:importantForAutofill="noExcludeDescendants"
-                android:textColorHint="?attr/colorPrimary">
+                android:importantForAutofill="noExcludeDescendants">
 
                 <EditText
                     android:id="@+id/ed_name"
@@ -223,7 +222,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="8dp"
                             android:layout_weight="1.0"
-                            android:textColorHint="?attr/colorPrimary"
                             android:importantForAutofill="noExcludeDescendants">
 
                             <EditText
@@ -233,7 +231,7 @@
                                 android:imeOptions="actionNext"
                                 android:inputType="text"
                                 android:lines="1"
-                                android:textColor="?attr/colorSurface"
+                                android:textColor="?attr/colorOnSurface"
                                 android:textSize="13sp" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -275,7 +273,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="8dp"
                         android:layout_weight="1.0"
-                        android:textColorHint="?attr/colorPrimary"
                         android:importantForAutofill="noExcludeDescendants">
 
                         <EditText
@@ -336,7 +333,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="8dp"
                         android:layout_weight="1.0"
-                        android:textColorHint="?attr/colorPrimary"
                         android:importantForAutofill="noExcludeDescendants">
 
                         <EditText
@@ -356,7 +352,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="8dp"
                         android:layout_weight="1.0"
-                        android:textColorHint="?attr/colorPrimary"
                         android:importantForAutofill="noExcludeDescendants">
 
                         <EditText

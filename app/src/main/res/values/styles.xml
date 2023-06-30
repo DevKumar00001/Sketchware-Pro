@@ -13,7 +13,7 @@
     
     <!-- Brownish Light -->
 
-    <style name="BrownishLight" parent="Theme.Material3.Light.NoActionBar">
+    <style name="BrownishLight" parent="@style/Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/brownish_md_theme_light_primary</item>
         <item name="colorOnPrimary">@color/brownish_md_theme_light_onPrimary</item>
         <item name="colorPrimaryContainer">@color/brownish_md_theme_light_primaryContainer</item>
@@ -44,7 +44,7 @@
     
     <!-- Brownish Dark -->
 
-    <style name="BrownishDark" parent="Theme.Material3.Dark.NoActionBar">
+    <style name="BrownishDark" parent="@style/Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/brownish_md_theme_dark_primary</item>
         <item name="colorOnPrimary">@color/brownish_md_theme_dark_onPrimary</item>
         <item name="colorPrimaryContainer">@color/brownish_md_theme_dark_primaryContainer</item>
@@ -75,7 +75,7 @@
     
         <!-- Green Light -->
 
-    <style name="GreenLight" parent="Theme.Material3.Light.NoActionBar">
+    <style name="GreenLight" parent="@style/Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/green_md_theme_light_primary</item>
         <item name="colorOnPrimary">@color/green_md_theme_light_onPrimary</item>
         <item name="colorPrimaryContainer">@color/green_md_theme_light_primaryContainer</item>
@@ -106,7 +106,7 @@
 
     <!-- Green Dark -->
 
-    <style name="GreenDark" parent="Theme.Material3.Dark.NoActionBar">
+    <style name="GreenDark" parent="@style/Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/green_md_theme_dark_primary</item>
         <item name="colorOnPrimary">@color/green_md_theme_dark_onPrimary</item>
         <item name="colorPrimaryContainer">@color/green_md_theme_dark_primaryContainer</item>
@@ -137,7 +137,7 @@
     
     <!-- Light Blue Light -->
     
-    <style name="LightBlueLight" parent="Theme.Material3.Light.NoActionBar">
+    <style name="LightBlueLight" parent="@style/Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/light_blue_md_theme_light_primary</item>
         <item name="colorOnPrimary">@color/light_blue_md_theme_light_onPrimary</item>
         <item name="colorPrimaryContainer">@color/light_blue_md_theme_light_primaryContainer</item>
@@ -168,7 +168,7 @@
     
     <!-- Light Blue Dark -->
     
-    <style name="LightBlueDark" parent="Theme.Material3.Dark.NoActionBar">
+    <style name="LightBlueDark" parent="@style/Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/light_blue_md_theme_dark_primary</item>
         <item name="colorOnPrimary">@color/light_blue_md_theme_dark_onPrimary</item>
         <item name="colorPrimaryContainer">@color/light_blue_md_theme_dark_primaryContainer</item>
