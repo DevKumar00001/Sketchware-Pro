@@ -571,8 +571,10 @@ public class LogicEditorActivity extends BaseAppCompatActivity implements View.O
             }
             BlockBean blockBean = arrayList2.get(size);
             if (!a(blockBean)) {
-                arrayList2.remove(size);
-                hashMap.remove(Integer.valueOf(blockBean.id));
+                if (!blockBean.opCode.equals("viewOnClick")) {
+                    arrayList2.remove(size);
+                    hashMap.remove(Integer.valueOf(blockBean.id));
+                }
             }
         }
         for (BlockBean block : arrayList2) {
